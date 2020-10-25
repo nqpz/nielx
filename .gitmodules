@@ -1,0 +1,3 @@
+[submodule "feedmael"]
+	path = nielx/feedmael
+	url = https://github.com/nqpz/feedmael.git
