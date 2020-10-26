@@ -1,0 +1,42 @@
+keycode 108 = Mode_switch
+
+keycode  34 = apostrophe acute quotedbl
+
+keycode  21 = grave dead_caron dead_acute
+keycode  35 = Tab equal backslash bar
+keycode  36 = Return
+keycode  49 = section brokenbar paragraph dead_circumflex
+keycode  10 = 1 exclam onesuperior exclamdown
+keycode  11 = 2 EuroSign twosuperior ssharp
+keycode  12 = 3 numbersign threesuperior sterling
+keycode  13 = 4 dollar onequarter currency
+keycode  14 = 5 percent onehalf U2030
+keycode  15 = 6 ampersand threequarters idotless
+keycode  16 = 7 slash division braceleft
+keycode  17 = 8 parenleft bracketleft eth
+keycode  18 = 9 parenright bracketright ETH
+keycode  19 = 0 equal braceright NoSymbol braceright
+
+keysym a = a A at dead_diaeresis
+keysym o = o O exclam dead_grave
+keysym u = u U parenleft parenleft parenleft
+keysym e = e E slash backslash slash backslash
+keysym h = h H parenright parenright parenright
+keysym t = t T asciitilde dead_tilde
+keysym n = n N asterisk
+keysym s = s S plus plusminus
+
+keysym aring = aring Aring percent division
+keysym comma = comma semicolon dollar
+keysym period = period colon asciicircum dead_circumflex
+keysym p = p P braceleft
+keysym r = r R equal
+keysym l = l L ampersand
+keysym g = g G braceright
+keysym c = c C numbersign
+
+keysym q = q Q question
+keysym k = k K bracketleft
+keysym b = b B bracketright
+keysym m = m M bar brokenbar
+keysym j = j J Insert

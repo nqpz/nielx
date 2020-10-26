@@ -34,6 +34,7 @@ in
 {
   options.nielx.services = {
     services = mkOption {
+      default = { };
       type = types.attrsOf (types.submodule {
         options = {
           preStart = mkOption {
@@ -59,7 +60,7 @@ in
     };
   };
 
-  config = mkIf (cfg.services != {}) {
+  config = {
     systemd.timers = mapAttrs makeServiceTimer cfg.services;
     systemd.services = mapAttrs makeServiceService cfg.services;
   };

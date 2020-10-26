@@ -8,18 +8,11 @@ in
     [ ./hardware-configuration.nix
       ./niv.nix
       ../nielx.nix
+      ../common.nix
       ./simple-emacs.nix
       ./packages.nix
       ./www.nix
     ];
-
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "weekly";
-    };
-    autoOptimiseStore = true;
-  };
 
   boot.loader.grub = {
     enable = true;
@@ -30,13 +23,6 @@ in
     useDHCP = false;
     interfaces.eth0.useDHCP = true;
     usePredictableInterfaceNames = false;
-    hostName = cfg.hostname;
-  };
-
-  programs.ssh = {
-    startAgent = true;
-    extraConfig = "AddKeysToAgent yes"; # add keys on first ssh
-    agentTimeout = "8h";
   };
 
   systemd.services."status_email_user@" =
@@ -64,18 +50,8 @@ EOF
 
   services.journald.extraConfig = "SystemMaxUse=1GB";
 
-  i18n.defaultLocale = "en_DK.UTF-8";
-  time.timeZone = "Europe/Copenhagen";
-
   environment.variables = {
     EDITOR = "emacs";
-  };
-
-  services.lorri.enable = true;
-  environment.systemPackages = [ pkgs.direnv ];
-
-  home-manager = {
-    useGlobalPkgs = true;
   };
 
   users.users."${cfg.user}" = {
