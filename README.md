@@ -12,3 +12,10 @@ I'm also using a few NixOS-related community projects:
 
 - [Home Manager](https://github.com/nix-community/home-manager)
 - [niv](https://github.com/nmattia/niv)
+
+
+## Starting points
+
+You might want to look at [laptop.nix](laptop/laptop.nix) and
+[server.nix](server/server.nix) to get an overview of how my laptop and
+my server are constructed.
