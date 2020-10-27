@@ -16,6 +16,7 @@ I'm also using a few NixOS-related community projects:
 
 ## Starting points
 
-You might want to look at [laptop.nix](laptop/laptop.nix) and
-[server.nix](server/server.nix) to get an overview of how my laptop and
-my server are constructed.
+You might want to look at [laptop/laptop.nix](laptop/laptop.nix) and
+[server/server.nix](server/server.nix) to get an overview of how my
+laptop and my server are constructed.  [nielx.nix](nielx.nix) contains
+general modules that can be applied to any configuration.
