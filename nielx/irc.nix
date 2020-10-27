@@ -59,6 +59,8 @@ in
         LoadModule = [ "adminlog" "log" ];
         User."${cfg.nick}" = {
           Admin = true;
+	  Buffer = 500000;
+	  ChanBufferSize = 500000;
           Pass.password = cfg.znc.password;
           Network = cfg.networks // (if cfg.bitlbee.enable then {
             bitlbee = {
