@@ -83,6 +83,22 @@ eval "$(direnv hook bash)"
     };
 
     programs.autojump.enable = true;
+
+    programs.git = let
+      excludesFile = pkgs.writeText "global-gitignore" ''
+.envrc
+'';
+    in {
+      enable = true;
+      userName = cfg.fullName;
+      userEmail = cfg.email;
+      iniContent.pull.ff = "only";
+      extraConfig = {
+        core = {
+          excludesfile = "${excludesFile}";
+        };
+      };
+    };
   };
 
   # This value determines the NixOS release with which your system is to be
