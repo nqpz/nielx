@@ -66,6 +66,22 @@ in
   };
 
   home-manager.users."${cfg.user}" = { pkgs, ... }: {
+    programs.bash = {
+      enable = true;
+      historySize = 50000;
+      initExtra=''
+. ${cfg.home}/prog/bash/bash-functions
+
+eval "$(direnv hook bash)"
+'';
+      shellAliases = {
+        ".." = "cd ..";
+        "..." = "cd ../..";
+        "...." = "cd ../../..";
+        "....." = "cd ../../../..";
+      };
+    };
+
     programs.autojump.enable = true;
   };
 
