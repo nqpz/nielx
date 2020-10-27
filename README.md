@@ -10,5 +10,5 @@ sensitive information) that uses this repository as its base.
 
 I'm also using a few NixOS-related community projects:
 
-- [https://github.com/nix-community/home-manager](Home Manager)
-- [https://github.com/nmattia/niv](Niv)
+- [Home Manager](https://github.com/nix-community/home-manager)
+- [Niv](https://github.com/nmattia/niv)
