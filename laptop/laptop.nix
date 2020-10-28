@@ -92,6 +92,8 @@ eval "$(direnv hook bash)"
       };
     };
 
+    home.file.".urlview".text = "COMMAND firefox u";
+
     programs.git = let
       excludesFile = pkgs.writeText "global-gitignore" ''
 .envrc
