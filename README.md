@@ -14,6 +14,9 @@ I'm also using a few NixOS-related community projects:
 - [niv](https://github.com/nmattia/niv)
 - [lorri](https://github.com/target/lorri)
 
+Much of my code is inspired and pasted from
+[nixos.wiki](https://nixos.wiki/).
+
 
 ## Starting points
 
