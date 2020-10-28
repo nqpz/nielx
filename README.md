@@ -12,6 +12,7 @@ I'm also using a few NixOS-related community projects:
 
 - [Home Manager](https://github.com/nix-community/home-manager)
 - [niv](https://github.com/nmattia/niv)
+- [lorri](https://github.com/target/lorri)
 
 
 ## Starting points
