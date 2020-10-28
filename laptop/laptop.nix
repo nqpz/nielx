@@ -84,6 +84,14 @@ eval "$(direnv hook bash)"
 
     programs.autojump.enable = true;
 
+    services.stalonetray = {
+      enable = true;
+      config = {
+        window_type = "normal";
+        background = "white";
+      };
+    };
+
     programs.git = let
       excludesFile = pkgs.writeText "global-gitignore" ''
 .envrc

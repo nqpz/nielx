@@ -44,7 +44,6 @@
     stdmanpages
     manpages
     valgrind
-    stalonetray
     nmap
     gnupg
     bash-completion
