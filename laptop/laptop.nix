@@ -84,13 +84,10 @@ eval "$(direnv hook bash)"
 
     programs.autojump.enable = true;
 
-    services.stalonetray = {
-      enable = true;
-      config = {
-        window_type = "normal";
-        background = "white";
-      };
-    };
+    home.file.".stalonetrayrc".text = ''
+window_type normal
+background white
+'';
 
     home.file.".urlview".text = "COMMAND firefox u";
 

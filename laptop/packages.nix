@@ -102,6 +102,7 @@
     xorg.xdpyinfo
     xorg.xeyes
     xorg.xhost
+    stalonetray
     xdotool
     xsel
     xmacro
