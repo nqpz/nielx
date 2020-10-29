@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     nix-index
-    (emacs.override { withXwidgets = true; })
+    emacs
     neomutt
     offlineimap
     urlview
@@ -102,6 +102,8 @@
     xorg.xdpyinfo
     xorg.xeyes
     xorg.xhost
+    stumpish
+    rlwrap
     stalonetray
     xdotool
     xsel
@@ -126,6 +128,24 @@
     supercollider
     supercollider_scel
     jitsi-meet-electron
+
+    (pkgs.writeScriptBin "stumpemacsclient" ''
+#!/bin/sh
+set -e # Exit on first error.
+${pkgs.stumpish}/bin/stumpish 'eval (stumpwm::save-es-called-win)' > /dev/null
+${pkgs.emacs}/bin/emacsclient "$@"
+'')
+
+    (pkgs.writeScriptBin "battery" ''
+#!/bin/sh
+${pkgs.acpi}/bin/acpi | sed -r 's/^[^0-9]*[0-9]+[^0-9]*([0-9]+).*$/\1/'
+'')
+
+    # Requires $MAILDIR to be set.
+    (pkgs.writeScriptBin "checkmail" ''
+#!/bin/sh
+echo "Email: $(ls $MAILDIR/INBOX/new | wc -l)"
+'')
 
     # unfree
     spotify

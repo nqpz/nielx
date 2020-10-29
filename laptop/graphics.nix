@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 let
+  cfg = config.nielx;
   xmodmapFile = pkgs.writeScript "xmodmap" (builtins.readFile ./xmodmap);
 in
 {
@@ -26,7 +27,11 @@ in
       };
       sessionCommands = ''
 ${pkgs.xorg.xhost}/bin/xhost +local:lxd
+${pkgs.xorg.setxkbmap}/bin/setxkbmap dk dvorak
+${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:swapcaps
 ${pkgs.xorg.xmodmap}/bin/xmodmap ${xmodmapFile}
+${pkgs.xorg.xsetroot}/bin/xsetroot -cursor_name left_ptr
+. ${import ./exports.nix cfg pkgs }
 '';
     };
 

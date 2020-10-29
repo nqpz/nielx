@@ -1,0 +1,44 @@
+#!/bin/sh
+
+getmpids() {
+    ps ux | grep mpv | grep "$1" | sed -r 's/\s+/ /' | cut -d ' ' -f 2
+}
+
+mkill() {
+    for pid in $(getmpids "$1"); do
+        if [ "$pid" ]; then
+            kill -9 "$pid"
+        fi
+    done
+}
+
+start_mpv() {
+    mpv "$1" >/dev/null 2>/dev/null &
+}
+
+mplay() {
+    if [ "$1" = radioalfa ]; then
+        start_mpv http://89.249.7.68/alfa
+    elif [ "$1" = rivieraradio ]; then
+        start_mpv http://rivieraradio.ice.infomaniak.ch/rivieraradio-high
+    elif [ "$1" = discofetish ]; then
+        start_mpv http://radio.intergalactic.fm/2
+    fi
+}
+
+default=radioalfa
+
+if [ "$1" ]; then
+    cur="$1"
+else
+    cur=$default
+fi
+
+if ! [ "$(getmpids $cur)" ]; then
+    mkill alfa
+    mkill rivieraradio
+    mkill intergalactic
+    if ! [ "$cur" = '_stop' ]; then
+        mplay "$cur"
+    fi
+fi

@@ -2,6 +2,23 @@
 
 let
   cfg = config.nielx;
+
+  # Sometimes it's nice to be able to live-edit a file instead of waiting for
+  # 'nixos-rebuild switch' to copy it and finish.  This function addresses that
+  # usecase by making a derivation that symlinks to the actual file in this
+  # repository.
+  symlinkTo = source:
+    let
+      linkDir = pkgs.stdenv.mkDerivation {
+        name = "symlink";
+        phases = "installPhase";
+        installPhase = ''
+mkdir -p $out
+ln -s ${cfg.root}/laptop/${source} $out/symlink
+'';
+      };
+    in
+      "${linkDir}/symlink";
 in
 {
   imports =
@@ -69,16 +86,14 @@ in
     programs.bash = {
       enable = true;
       historySize = 50000;
-      initExtra=''
-. ${cfg.home}/prog/bash/bash-functions
+      initExtra = ''
+. ${cfg.home}/config/laptop/bash_private
 
 eval "$(direnv hook bash)"
 '';
-      shellAliases = {
-        ".." = "cd ..";
-        "..." = "cd ../..";
-        "...." = "cd ../../..";
-        "....." = "cd ../../../..";
+      profileExtra = ". ${import ./exports.nix cfg pkgs}";
+      shellAliases = cfg.commonShellAliases // {
+        "emc" = "emacsclient -n";
       };
     };
 
@@ -106,6 +121,8 @@ background white
         };
       };
     };
+
+    home.file.".stumpwmrc".source = symlinkTo "stumpwmrc";
   };
 
   # This value determines the NixOS release with which your system is to be

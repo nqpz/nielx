@@ -66,12 +66,7 @@ EOF
       enable = true;
       historySize = 50000;
       initExtra=''eval "$(direnv hook bash)"'';
-      shellAliases = {
-        ".." = "cd ..";
-        "..." = "cd ../..";
-        "...." = "cd ../../..";
-        "....." = "cd ../../../..";
-      };
+      shellAliases = cfg.commonShellAliases;
     };
 
     programs.autojump.enable = true;

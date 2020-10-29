@@ -27,4 +27,14 @@ in
   time.timeZone = "Europe/Copenhagen";
 
   networking.hostName = cfg.hostname;
+
+  nielx.commonShellAliases = {
+    ".." = "cd ..";
+    "..." = "cd ../..";
+    "...." = "cd ../../..";
+    "....." = "cd ../../../..";
+    "mv" = "mv -n";
+    "dtrx" = "dtrx -n";
+    "duhst" = "du -hsc";
+  };
 }

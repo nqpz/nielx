@@ -45,6 +45,10 @@ in
       example = "/home/niels/config/nielx";
     };
 
+    commonShellAliases = mkOption {
+      type = types.attrs;
+    };
+
     www = {
       acmeSSL = mkOption {
         type = types.bool;
