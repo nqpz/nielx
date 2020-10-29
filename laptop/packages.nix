@@ -16,7 +16,7 @@
     mpv
     mplayer
     vlc
-    ffmpeg-full
+    ffmpeg
     x264
     bento4
     firefox
