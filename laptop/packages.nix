@@ -151,6 +151,7 @@ echo "Email: $(ls $MAILDIR/INBOX/new | wc -l)"
     steam
     slack
     google-chrome
+    (pkgs.writeScriptBin "chrome" "${pkgs.google-chrome}/bin/google-chrome-stable")
     discord
   ];
 }
