@@ -6,7 +6,7 @@ let
   # Sometimes it's nice to be able to live-edit a file instead of waiting for
   # 'nixos-rebuild switch' to copy it and finish.  This function addresses that
   # usecase by making a derivation that symlinks to the actual file in this
-  # repository.
+  # repository.  I guess this is a bit wrong.
   symlinkTo = source:
     let
       linkDir = pkgs.stdenv.mkDerivation {
