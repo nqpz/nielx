@@ -1,29 +1,3 @@
-(setq TeX-command-list
-      '(
-        ("TeX" "/home/niels/prog/bash/latexautorerun.sh %(PDF)%(tex) %`%S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
-         (plain-tex-mode texinfo-mode ams-tex-mode) :help "Run plain TeX")
-        ("LaTeX" "/home/niels/prog/bash/latexautorerun.sh %`%l%(mode)%' %t" TeX-run-TeX nil (latex-mode doctex-mode) :help "Run LaTeX")
-        ("Make" "/home/niels/prog/bash/makeinfiledir %s" TeX-run-command t t :help "Run make in the directory of the main file")
-        ("LaTeX unauto" "%`%l%(mode)%' %t" TeX-run-TeX nil (latex-mode doctex-mode) :help "Run LaTeX")
-        ("XeLaTeX" "/home/niels/prog/bash/latexautorerun.sh xelatex -shell-escape -interaction=nonstopmode %s" TeX-run-LaTeX nil t :help "Run XeLaTeX")
-        ("Makeinfo" "makeinfo %t" TeX-run-compile nil (texinfo-mode) :help "Run Makeinfo with Info output")
-        ("Makeinfo HTML" "makeinfo --html %t" TeX-run-compile nil (texinfo-mode) :help "Run Makeinfo with HTML output")
-        ("AmSTeX" "/home/niels/prog/bash/latexautorerun.sh %(PDF)amstex %`%S%(PDFout)%(mode)%' %t" TeX-run-TeX nil (ams-tex-mode) :help "Run AMSTeX")
-        ("ConTeXt" "texexec --once --texutil %(execopts)%t" TeX-run-TeX nil (context-mode) :help "Run ConTeXt once")
-        ("ConTeXt Full" "texexec %(execopts)%t" TeX-run-TeX nil (context-mode) :help "Run ConTeXt until completion")
-        ("biber" "biber %s" TeX-run-BibTeX nil t :help "Run BibTeX")
-        ("BibTeX" "bibtex %s" TeX-run-BibTeX nil t :help "Run BibTeX")
-        ("View" "/home/niels/prog/bash/zathurad %s.pdf" TeX-run-discard-or-function t t :help "Run Viewer")
-        ("Print" "%p" TeX-run-command t t :help "Print the file")
-        ("Queue" "%q" TeX-run-background nil t :help "View the printer queue" :visible TeX-queue-command)
-        ("File" "%(o?)dvips %d -o %f " TeX-run-command t t :help "Generate PostScript file")
-        ("Index" "makeindex %s" TeX-run-command nil t :help "Create index file")
-        ("Check" "lacheck %s" TeX-run-compile nil (latex-mode) :help "Check LaTeX file for correctness")
-        ("Spell" "(TeX-ispell-document \"\")" TeX-run-function nil t :help "Spell-check the document")
-        ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
-        ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
-        ("Other" "" TeX-run-command t t :help "Run an arbitrary command")))
-
 (setq cdlatex-env-alist
       '(("axiom" "\\begin{axiom}\nAUTOLABEL\n?\n\\end{axiom}\n" nil)
         ("theorem" "\\begin{theorem}\nAUTOLABEL\n?\n\\end{theorem}\n" nil)
