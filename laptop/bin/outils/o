@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import importlib
+import subprocess
+from outils import *
+
+
+def error(s):
+    print('error: {}'.format(s), file=sys.stderr)
+
+def main(args):
+    if len(args) < 1:
+        error('no filenames')
+        return 1
+    module_names = [get_basename(filename) for filename
+                    in os.listdir(os.path.dirname(__file__))
+                    if filename.endswith('.py')]
+    modules = [importlib.import_module(name) for name in module_names]
+    opens = [module.open for module in modules if 'open' in dir(module)]
+
+    commands = [open(args) for open in opens if open(args)]
+    if len(commands) > 1:
+        error('conflict: {}'.format(commands))
+        return 1
+    if len(commands) < 1:
+        error('no matching commands')
+        return 1
+
+    command = commands[0]
+    subprocess.run(command)
+
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
