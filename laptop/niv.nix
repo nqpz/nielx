@@ -3,22 +3,28 @@
 let
   sources = import ./nix/sources.nix;
 
-  sources_pkgs = import sources.nixpkgs { config.allowUnfree = true; };
-  overlay_sources = _: _: sources_pkgs;
-
-  nixos-hardware = sources.nixos-hardware;
-
   overlay_niv = _: _: {
     niv = (import sources.niv {}).niv;
   };
 in
 {
   imports =
-    [ (import sources.home-manager {}).nixos
-      "${nixos-hardware}/lenovo/thinkpad/t480s"
-      "${nixos-hardware}/common/pc/ssd"
+    [ "${sources.home-manager}/nixos"
+      "${sources.nixos-hardware}/lenovo/thinkpad/t480s"
+      "${sources.nixos-hardware}/common/pc/ssd"
     ];
 
-  nixpkgs.overlays = [ overlay_sources overlay_niv ];
+  nix.nixPath = [
+    "nixpkgs=${sources.nixpkgs}"
+    "nixos=${sources.nixpkgs}"
+    "nixos-config=/etc/nixos/configuration.nix"
+    "/nix/var/nix/profiles/per-user/root/channels"
+  ];
+
+  nixpkgs.pkgs = import sources.nixpkgs {
+    config.allowUnfree = true;
+    overlays = [ overlay_niv ];
+  };
+
   environment.systemPackages = [ pkgs.niv ];
 }
