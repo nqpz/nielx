@@ -3,8 +3,6 @@
 with lib;
 
 let
-  cfg = config.nielx.services;
-
   makeServiceTimer = name: { preStart, command, packages, user, group, when }:
     if when != null then {
       enable = true;
@@ -32,36 +30,34 @@ let
   };
 in
 {
-  options.nielx.services = {
-    services = mkOption {
-      default = { };
-      type = types.attrsOf (types.submodule {
-        options = {
-          preStart = mkOption {
-            type = types.nullOr types.str;
-          };
-          command = mkOption {
-            type = types.str;
-          };
-          packages = mkOption {
-            type = types.listOf types.package;
-          };
-          user = mkOption {
-            type = types.str;
-          };
-          group = mkOption {
-            type = types.str;
-          };
-          when = mkOption {
-            type = types.nullOr types.str;
-          };
+  options.nielx.services = mkOption {
+    default = { };
+    type = types.attrsOf (types.submodule {
+      options = {
+        preStart = mkOption {
+          type = types.nullOr types.str;
         };
-      });
-    };
+        command = mkOption {
+          type = types.str;
+        };
+        packages = mkOption {
+          type = types.listOf types.package;
+        };
+        user = mkOption {
+          type = types.str;
+        };
+        group = mkOption {
+          type = types.str;
+        };
+        when = mkOption {
+          type = types.nullOr types.str;
+        };
+      };
+    });
   };
 
   config = {
-    systemd.timers = mapAttrs makeServiceTimer cfg.services;
-    systemd.services = mapAttrs makeServiceService cfg.services;
+    systemd.timers = mapAttrs makeServiceTimer config.nielx.services;
+    systemd.services = mapAttrs makeServiceService config.nielx.services;
   };
 }

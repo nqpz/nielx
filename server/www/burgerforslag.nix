@@ -8,7 +8,7 @@
     extraConfig = "include /var/www/burgerforslag/burgerforslag.nginx.conf;";
   };
 
-  nielx.services.services.burgerforslag-update = {
+  nielx.services.burgerforslag-update = {
     preStart = null;
     command = "${pkgs.dash}/bin/dash -c '/var/www/burgerforslag/get_missing_borgerforslag && /var/www/burgerforslag/update'";
     packages = (import /var/www/burgerforslag/default.nix).buildInputs;

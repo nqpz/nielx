@@ -40,7 +40,7 @@ in
     webhooksActionsFile = pkgs.writeText "actions" (builtins.concatStringsSep "\n" (map formatAction cfg.webhooks));
     webhooksScript = pkgs.writeScript "webhooks.py" (builtins.readFile ./webhooks.py);
   in mkIf cfg.enable {
-    nielx.services.services.webhooks = {
+    nielx.services.webhooks = {
       preStart = null;
       command = "${webhooksScript} ${builtins.toString cfg.port} ${webhooksActionsFile}";
       packages = with pkgs; [ python3 git ];

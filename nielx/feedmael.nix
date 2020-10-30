@@ -33,7 +33,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    nielx.services.services.feedmael = {
+    nielx.services.feedmael = {
       preStart = "mkdir -p ${cfg.stateDir}";
       command = "${config.nielx.root}/nielx/feedmael/feedmael.py ${cfg.stateDir}/${cfg.stateFile} ${cfg.fromAddress} ${cfg.toAddress} ${builtins.concatStringsSep " " cfg.feeds}";
       packages = (import ./feedmael/default.nix).buildInputs;

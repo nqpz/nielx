@@ -107,7 +107,7 @@ in
     '';
     };
 
-    nielx.services.services.gitea-dump = let
+    nielx.services.gitea-dump = let
       stateDir = "/var/lib/gitea";
       giteaDump = pkgs.writeScript "gitea_dump" ''#!/bin/sh
 set -e
