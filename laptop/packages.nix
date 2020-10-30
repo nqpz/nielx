@@ -13,7 +13,6 @@
     screen
     stack
     imagemagick
-    mpv
     mplayer
     vlc
     ffmpeg

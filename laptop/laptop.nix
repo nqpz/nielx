@@ -106,6 +106,17 @@ background white
 
     home.file.".urlview".text = "COMMAND firefox u";
 
+    programs.mpv = {
+      enable = true;
+      config = {
+        fullscreen = "yes";
+        hwdec = "auto-safe";
+        vo = "gpu";
+        profile = "gpu-hq";
+        ytdl-format = "bestvideo+bestaudio";
+      };
+    };
+
     programs.git = let
       excludesFile = pkgs.writeText "global-gitignore" ''
 .envrc
