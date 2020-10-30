@@ -17,6 +17,7 @@ in
       ./nielx/postfix_relayhost.nix
       ./nielx/gitea.nix
       ./nielx/webhooks.nix
+      ./nielx/apps.nix
     ];
 
   options.nielx = {
