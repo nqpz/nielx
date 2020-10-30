@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Used when reading HTML emails from mutt to avoid the temporary HTML files
+# being deleted before Firefox gets a chance to load them.
+
+firefox "$1"
+sleep 3
