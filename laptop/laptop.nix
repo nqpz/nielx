@@ -117,6 +117,11 @@ background white
       };
     };
 
+    home.file.".emacs.d/init.el".text = ''
+(add-to-list 'load-path "${cfg.root}/laptop/emacs")
+(require 'niels)
+'';
+
     programs.git = let
       excludesFile = pkgs.writeText "global-gitignore" ''
 .envrc
