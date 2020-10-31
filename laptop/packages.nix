@@ -5,6 +5,7 @@
     nix-index
     emacs
     neomutt
+    (pkgs.writeScriptBin "mutt" ''${pkgs.neomutt}/bin/neomutt "$@"'')
     offlineimap
     urlview
     ack
