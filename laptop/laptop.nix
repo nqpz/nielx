@@ -65,7 +65,7 @@ in
   virtualisation.lxd.enable = true;
   virtualisation.lxd.recommendedSysctlSettings = true;
 
-  # For X11 and pulseaudio to work.
+  # For X11 and pulseaudio to work with LXD.
   users.users.root.subUidRanges = [{ startUid = 1000; count = 1; }];
   users.users.root.subGidRanges = [{ startGid = 100; count = 1; }];
 
