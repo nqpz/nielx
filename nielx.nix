@@ -42,6 +42,10 @@ in
       type = types.str;
     };
 
+    gpgKey = mkOption {
+      type = types.str;
+    };
+
     root = mkOption {
       type = types.str;
       example = "/home/niels/config/nielx";
