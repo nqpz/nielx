@@ -1,11 +1,17 @@
 { config, pkgs, ... }:
 
+let
+  binWrapper = dest: src:
+    (pkgs.writeScriptBin dest ''#!/bin/sh
+exec ${src} "$@"
+'');
+in
 {
   environment.systemPackages = with pkgs; [
     nix-index
     emacs
     neomutt
-    (pkgs.writeScriptBin "mutt" ''${pkgs.neomutt}/bin/neomutt "$@"'')
+    (binWrapper "mutt" "${pkgs.neomutt}/bin/neomutt")
     offlineimap
     urlview
     ack
@@ -75,7 +81,7 @@
     bc
     ascii
     swiProlog
-    (pkgs.writeScriptBin "pl" ''${pkgs.swiProlog}/bin/swipl "$@"'')
+    (binWrapper "pl" "${pkgs.swiProlog}/bin/swipl")
     tree
     aegisub
     gparted
@@ -125,7 +131,7 @@
     glxinfo
     cudatoolkit
     element-desktop
-    (pkgs.writeScriptBin "element" ''${pkgs.element-desktop}/bin/element-desktop "$@"'')
+    (binWrapper "element" "${pkgs.element-desktop}/bin/element-desktop")
     qjackctl
     supercollider
     supercollider_scel
@@ -174,8 +180,8 @@ ${pkgs.ghostscript}/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTI
     steam
     slack
     google-chrome
-    (pkgs.writeScriptBin "chrome" ''${pkgs.google-chrome}/bin/google-chrome-stable "$@"'')
+    (binWrapper "chrome" "${pkgs.google-chrome}/bin/google-chrome-stable")
     discord
-    (pkgs.writeScriptBin "discord" ''${pkgs.discord}/bin/Discord "$@"'')
+    (binWrapper "discord" "${pkgs.discord}/bin/Discord")
   ];
 }
