@@ -40,7 +40,7 @@ ${pkgs.time}/bin/time -p \
      ${pkgs.rdiff-backup}/bin/rdiff-backup \
      --include-symbolic-links \
      --include-globbing-filelist ${globbingFileList} \
-     / ${cfg.destination}
+     ${config.nielx.home} ${cfg.destination}
 '';
     scriptIfWifi = pkgs.writeScriptBin "backup-if-wifi" ''
 #!/bin/sh
