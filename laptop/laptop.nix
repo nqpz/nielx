@@ -136,6 +136,10 @@ background white
       userName = cfg.fullName;
       userEmail = cfg.email;
       iniContent.pull.ff = "only";
+      signing = {
+        signByDefault = true;
+        key = cfg.gpgKey;
+      };
       extraConfig = {
         core = {
           excludesfile = "${excludesFile}";
