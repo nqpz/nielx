@@ -3,6 +3,8 @@
 with lib;
 
 let
+  cfg = config.nielx;
+
   makeServiceTimer = name: { preStart, command, packages, user, group, when }:
     if when != null then {
       enable = true;
@@ -56,8 +58,30 @@ in
     });
   };
 
-  config = {
+  config = let
+    systemd_email = pkgs.writeScript "systemd_email" ''#!/bin/sh
+${pkgs.postfix}/bin/sendmail -t <<EOF
+To: ${cfg.email}
+# Subject: [${cfg.hostname} systemd] $1
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=UTF-8
+
+$(${pkgs.systemd}/bin/systemctl status --full "$1")
+EOF
+'';
+  in {
     systemd.timers = mapAttrs makeServiceTimer config.nielx.services;
-    systemd.services = mapAttrs makeServiceService config.nielx.services;
+    systemd.services = mapAttrs makeServiceService config.nielx.services // {
+      "status_email_user@" = {
+        enable = true;
+        path = with pkgs; [ systemd postfix ];
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = "${systemd_email} %i";
+          User = "root";
+          Group = "systemd-journal";
+        };
+      };
+    };
   };
 }

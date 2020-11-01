@@ -25,29 +25,6 @@ in
     usePredictableInterfaceNames = false;
   };
 
-  systemd.services."status_email_user@" =
-    let
-      systemd_email = pkgs.writeScript "systemd_email" ''#!/bin/sh
-${pkgs.postfix}/bin/sendmail -t <<EOF
-To: ${cfg.email}
-# Subject: [nixpille systemd] $1
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain; charset=UTF-8
-
-$(systemctl status --full "$1")
-EOF
-'';
-    in {
-      enable = true;
-      path = with pkgs; [ systemd postfix ];
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = "${systemd_email} %i";
-        User = "root";
-        Group = "systemd-journal";
-      };
-    };
-
   services.journald.extraConfig = "SystemMaxUse=1GB";
 
   environment.variables = {
