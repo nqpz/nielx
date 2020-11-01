@@ -20,7 +20,6 @@ in
     password = mkOption {
       type = types.str;
     };
-
     frequency = mkOption {
       type = types.str;
       example = "*-*-* 01:00:00";
