@@ -141,6 +141,12 @@ background white
     home.file.".stumpwmrc".source = symlinkTo "stumpwmrc";
   };
 
+  # Enable things through the nielx wrapper.  Sensitive information is kept
+  # separate.
+  nielx = {
+    rdiff-backup.enable = true;
+  };
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
