@@ -50,6 +50,7 @@ in
   # Enable things through the nielx wrapper.  Sensitive information is kept
   # separate.
   nielx = {
+    shellPromptColor = "1;33m";
     sshserver.enable = true;
     duplicity.enable = true;
     longview.enable = true;

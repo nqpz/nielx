@@ -51,6 +51,10 @@ in
       example = "/home/niels/config/nielx";
     };
 
+    shellPromptColor = mkOption {
+      type = types.str;
+    };
+
     commonShellAliases = mkOption {
       type = types.attrs;
     };
