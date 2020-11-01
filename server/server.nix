@@ -68,8 +68,6 @@ EOF
       initExtra=''eval "$(direnv hook bash)"'';
       shellAliases = cfg.commonShellAliases;
     };
-
-    programs.autojump.enable = true;
   };
 
   # Enable things through the nielx wrapper.  Sensitive information is kept

@@ -97,8 +97,6 @@ eval "$(direnv hook bash)"
       };
     };
 
-    programs.autojump.enable = true;
-
     home.file.".stalonetrayrc".text = ''
 window_type normal
 background white

@@ -55,6 +55,8 @@ in
     };
   };
 
+  programs.autojump.enable = true;
+
   nielx = {
     gpgKey = "38EEEBCE67324F19";
     commonShellAliases = {
