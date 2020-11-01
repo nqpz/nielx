@@ -65,6 +65,7 @@
     gimp
     inkscape
     texlive.combined.scheme-full
+    ghostscript
     w3m
     lynx
     aalib
@@ -162,6 +163,14 @@ rmdir "$temp_dir"
 #!/bin/sh
 out="$1"
 ${pkgs.ffmpeg}/bin/ffmpeg -f video4linux2 -s 1280x720 -r 25 -i /dev/video0 -f oss -i /dev/dsp -f webm "$out"
+'')
+
+    (pkgs.writeScriptBin "pdfcompress" ''
+#!/bin/sh
+in="$1"
+out="$2"
+mode="$3" # screen, ebook, or printer
+${pkgs.ghostscript}/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/$mode -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$out" "$in"
 '')
 
     # unfree
