@@ -75,6 +75,7 @@
     bc
     ascii
     swiProlog
+    (pkgs.writeScriptBin "pl" ''${pkgs.swiProlog}/bin/swipl "$@"'')
     tree
     aegisub
     gparted
@@ -124,6 +125,7 @@
     glxinfo
     cudatoolkit
     element-desktop
+    (pkgs.writeScriptBin "element" ''${pkgs.element-desktop}/bin/element-desktop "$@"'')
     qjackctl
     supercollider
     supercollider_scel
@@ -180,5 +182,6 @@ ${pkgs.ghostscript}/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTI
     google-chrome
     (pkgs.writeScriptBin "chrome" ''${pkgs.google-chrome}/bin/google-chrome-stable "$@"'')
     discord
+    (pkgs.writeScriptBin "discord" ''${pkgs.discord}/bin/Discord "$@"'')
   ];
 }
