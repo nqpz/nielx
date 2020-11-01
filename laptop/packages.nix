@@ -45,7 +45,6 @@
     manpages
     valgrind
     nmap
-    gnupg
     bash-completion
     wmctrl
     autossh

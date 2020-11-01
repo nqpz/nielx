@@ -75,6 +75,11 @@ in
 
   users.extraGroups.vboxusers.members = [ cfg.user ];
 
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "curses";
+  };
+
   users.users."${cfg.user}" = {
     isNormalUser = true;
     home = "${cfg.home}";
