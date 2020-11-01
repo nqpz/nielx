@@ -56,7 +56,6 @@ in
     matrix.enable = true;
     feedmael.enable = true;
     irc.enable = true;
-    postfix_relayhost.enable = true;
   };
 
   # This value determines the NixOS release from which the default

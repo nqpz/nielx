@@ -60,7 +60,6 @@
   };
 
   nielx = {
-    www.acmeSSL = true;
     gitea = {
       enable = true;
       name = "metanohi gitea";

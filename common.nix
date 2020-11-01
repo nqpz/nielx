@@ -78,5 +78,7 @@ max-cache-ttl 86400
       "dtrx" = "dtrx -n";
       "duhst" = "du -hsc";
     };
+    www.acmeSSL = true;
+    postfix_relayhost.enable = true;
   };
 }
