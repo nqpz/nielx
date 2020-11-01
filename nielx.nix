@@ -59,6 +59,12 @@ in
       acmeSSL = mkOption {
         type = types.bool;
       };
+
+      domain = mkOption {
+        type = types.str;
+        description = "main domain";
+        example = "example.com";
+      };
     };
 
 
