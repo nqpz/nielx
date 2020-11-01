@@ -86,23 +86,8 @@ in
 
   home-manager.users."${cfg.user}" = { pkgs, ... }: {
     programs.bash = {
-      enable = true;
-      historySize = 50000;
       initExtra = ''
-eval "$(direnv hook bash)"
-
-ps1_date_color='1;34m'
-ps1_prompt_color='${cfg.shellPromptColor}'
-ps1_exit_code() {
-    ps1_exit_code=$?
-    if [ $ps1_exit_code = 0 ]; then
-        ps1_exit_color='1;32m'
-    else
-        ps1_exit_color='1;31m'
-    fi
-    echo -e "\033[$ps1_exit_color[$(printf %3d $ps1_exit_code)]"
-}
-PS1="\$(ps1_exit_code) \033[$ps1_date_color[$(date +%R)] \033[$ps1_prompt_color\u@\h:\w\\$\033[0m "
+${cfg.commonBash}
 
 . ${cfg.home}/config/laptop/bash_private
 '';

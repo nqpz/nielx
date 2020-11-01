@@ -40,9 +40,7 @@ in
 
   home-manager.users."${cfg.user}" = { pkgs, ... }: {
     programs.bash = {
-      enable = true;
-      historySize = 50000;
-      initExtra=''eval "$(direnv hook bash)"'';
+      initExtra = cfg.commonBash;
       shellAliases = cfg.commonShellAliases;
     };
   };

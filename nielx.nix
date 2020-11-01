@@ -55,6 +55,10 @@ in
       type = types.str;
     };
 
+    commonBash = mkOption {
+      type = types.str;
+    };
+
     commonShellAliases = mkOption {
       type = types.attrs;
     };
