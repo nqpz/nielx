@@ -42,6 +42,7 @@ escape ^Ww
   home-manager.users."${cfg.user}" = { pkgs, ... }: {
     home.file.".gnupg/gpg-agent.conf".text = ''
 max-cache-ttl 86400
+default-cache-ttl 86400
 '';
 
     programs.git = let
