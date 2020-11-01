@@ -29,6 +29,11 @@ in
 
   networking.hostName = cfg.hostname;
 
+  programs.screen.screenrc = ''
+startup_message off
+escape ^Ww
+'';
+
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "curses";
