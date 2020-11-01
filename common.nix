@@ -28,6 +28,33 @@ in
 
   networking.hostName = cfg.hostname;
 
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "curses";
+  };
+
+  home-manager.users."${cfg.user}" = { pkgs, ... }: {
+    programs.git = let
+      excludesFile = pkgs.writeText "global-gitignore" ''
+.envrc # lorri
+'';
+    in {
+      enable = true;
+      userName = cfg.fullName;
+      userEmail = cfg.email;
+      iniContent.pull.ff = "only";
+      signing = {
+        signByDefault = true;
+        key = cfg.gpgKey;
+      };
+      extraConfig = {
+        core = {
+          excludesfile = "${excludesFile}";
+        };
+      };
+    };
+  };
+
   nielx = {
     gpgKey = "38EEEBCE67324F19";
     commonShellAliases = {

@@ -70,13 +70,6 @@ EOF
     };
 
     programs.autojump.enable = true;
-
-    programs.git = {
-      enable = true;
-      userName = cfg.fullName;
-      userEmail = cfg.email;
-      iniContent.pull.ff = "only";
-    };
   };
 
   # Enable things through the nielx wrapper.  Sensitive information is kept

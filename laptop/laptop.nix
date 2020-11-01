@@ -75,11 +75,6 @@ in
 
   users.extraGroups.vboxusers.members = [ cfg.user ];
 
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryFlavor = "curses";
-  };
-
   users.users."${cfg.user}" = {
     isNormalUser = true;
     home = "${cfg.home}";
@@ -126,26 +121,6 @@ background white
 (add-to-list 'load-path "${cfg.root}/laptop/emacs")
 (require 'niels)
 '';
-
-    programs.git = let
-      excludesFile = pkgs.writeText "global-gitignore" ''
-.envrc
-'';
-    in {
-      enable = true;
-      userName = cfg.fullName;
-      userEmail = cfg.email;
-      iniContent.pull.ff = "only";
-      signing = {
-        signByDefault = true;
-        key = cfg.gpgKey;
-      };
-      extraConfig = {
-        core = {
-          excludesfile = "${excludesFile}";
-        };
-      };
-    };
 
     home.file.".stumpwmrc".source = symlinkTo "stumpwmrc";
   };
