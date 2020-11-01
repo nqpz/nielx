@@ -153,6 +153,13 @@ ${pkgs.acpi}/bin/acpi | sed -r 's/^[^0-9]*[0-9]+[^0-9]*([0-9]+).*$/\1/'
 echo "Email: $(ls $MAILDIR/INBOX/new | wc -l)"
 '')
 
+    # Used when reading HTML emails from mutt to avoid the temporary HTML files
+    # being deleted before Firefox gets a chance to load them.
+    (pkgs.writeScriptBin "firefox-wait" ''#!/bin/sh
+${pkgs.firefox}/bin/firefox "$1"
+sleep 3
+'')
+
     (pkgs.writeScriptBin "webcam-image" ''#!/bin/sh
 set -e # Exit on first error.
 out="$1"
