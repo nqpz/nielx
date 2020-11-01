@@ -15,7 +15,7 @@ in
   programs.ssh = {
     startAgent = true;
     extraConfig = "AddKeysToAgent yes"; # add keys on first ssh
-    agentTimeout = "8h";
+    agentTimeout = "24h";
   };
 
   services.lorri.enable = true;
@@ -34,6 +34,10 @@ in
   };
 
   home-manager.users."${cfg.user}" = { pkgs, ... }: {
+    home.file.".gnupg/gpg-agent.conf".text = ''
+max-cache-ttl 86400;
+'';
+
     programs.git = let
       excludesFile = pkgs.writeText "global-gitignore" ''
 .envrc # lorri
