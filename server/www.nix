@@ -65,6 +65,31 @@
       enable = true;
       name = "metanohi gitea";
       domain = "git.metanohi.name";
+      locationsPre = {
+        "/metanohi.git".extraConfig = "return 301 /ngws/metanohi;";
+        "/media.git".extraConfig = "return 301 /ngws/media;";
+        "/metanohi-misc-subsites.git".extraConfig = "return 301 /ngws/metanohi-misc-subsites;";
+        "/a-robots-conundrum.git".extraConfig = "return 301 /ngws/a-robots-conundrum;";
+        "/indirectassassin.git".extraConfig = "return 301 https://github.com/nqpz/indirectassassin;";
+        "/hest.git".extraConfig = "return 301 https://github.com/nqpz/hest;";
+        "/gravnoise.git".extraConfig = "return 301 https://github.com/nqpz/gravnoise;";
+        "/electruth.git".extraConfig = "return 301 https://github.com/nqpz/electruth;";
+        "/dotbox.git".extraConfig = "return 301 https://github.com/nqpz/dotbox;";
+        "/canvase.git".extraConfig = "return 301 https://github.com/nqpz/canvase;";
+        "/bytebeat.git".extraConfig = "return 301 https://github.com/nqpz/bytebeat;";
+        "/alp.git".extraConfig = "return 301 https://github.com/nqpz/alp;";
+        "/alart.git".extraConfig = "return 301 https://github.com/nqpz/alart;";
+        "/aeltei.git".extraConfig = "return 301 https://github.com/nqpz/aeltei;";
+        "/hbcht.git".extraConfig = "return 301 https://github.com/nqpz/hbcht;";
+        "/dililatum.git".extraConfig = "return 301 https://github.com/nqpz/dililatum;";
+        "/forestquest.git".extraConfig = "return 301 https://github.com/nqpz/forestquest;";
+        "/violat.git".extraConfig = "return 301 https://github.com/nqpz/violat;";
+        "/reje.git".extraConfig = "return 301 https://github.com/nqpz/reje;";
+        "/perspektrino.git".extraConfig = "return 301 https://github.com/nqpz/perspektrino;";
+        "/Na.git".extraConfig = "return 301 https://github.com/nqpz/Na;";
+        "/pumila.git".extraConfig = "return 301 https://github.com/nqpz/pumila;";
+        "/shadowloss.git".extraConfig = "return 301 https://github.com/nqpz/shadowloss;";
+      };
     };
     webhooks = {
       enable = true;
