@@ -132,26 +132,22 @@
     jitsi-meet-electron
     xmoto
 
-    (pkgs.writeScriptBin "stumpemacsclient" ''
-#!/bin/sh
+    (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
 ${pkgs.stumpish}/bin/stumpish 'eval (stumpwm::save-es-called-win)' > /dev/null
 ${pkgs.emacs}/bin/emacsclient "$@"
 '')
 
-    (pkgs.writeScriptBin "battery" ''
-#!/bin/sh
+    (pkgs.writeScriptBin "battery" ''#!/bin/sh
 ${pkgs.acpi}/bin/acpi | sed -r 's/^[^0-9]*[0-9]+[^0-9]*([0-9]+).*$/\1/'
 '')
 
     # Requires $MAILDIR to be set.
-    (pkgs.writeScriptBin "checkmail" ''
-#!/bin/sh
+    (pkgs.writeScriptBin "checkmail" ''#!/bin/sh
 echo "Email: $(ls $MAILDIR/INBOX/new | wc -l)"
 '')
 
-    (pkgs.writeScriptBin "webcam-image" ''
-#!/bin/sh
+    (pkgs.writeScriptBin "webcam-image" ''#!/bin/sh
 set -e # Exit on first error.
 out="$1"
 temp_dir="$(mktemp -d)"
@@ -161,14 +157,12 @@ mv "$temp" "$out"
 rmdir "$temp_dir"
 '')
 
-    (pkgs.writeScriptBin "webcam-video" ''
-#!/bin/sh
+    (pkgs.writeScriptBin "webcam-video" ''#!/bin/sh
 out="$1"
 ${pkgs.ffmpeg}/bin/ffmpeg -f video4linux2 -s 1280x720 -r 25 -i /dev/video0 -f oss -i /dev/dsp -f webm "$out"
 '')
 
-    (pkgs.writeScriptBin "pdfcompress" ''
-#!/bin/sh
+    (pkgs.writeScriptBin "pdfcompress" ''#!/bin/sh
 in="$1"
 out="$2"
 mode="$3" # screen, ebook, or printer
