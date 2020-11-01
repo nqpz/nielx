@@ -147,6 +147,23 @@ ${pkgs.acpi}/bin/acpi | sed -r 's/^[^0-9]*[0-9]+[^0-9]*([0-9]+).*$/\1/'
 echo "Email: $(ls $MAILDIR/INBOX/new | wc -l)"
 '')
 
+    (pkgs.writeScriptBin "webcam-image" ''
+#!/bin/sh
+set -e # Exit on first error.
+out="$1"
+temp_dir="$(mktemp -d)"
+temp="$temp_dir/streamer.jpeg"
+${pkgs.xawtv}/bin/streamer -f jpeg -j 90 -s 1280x720 -o $temp
+mv "$temp" "$out"
+rmdir "$temp_dir"
+'')
+
+    (pkgs.writeScriptBin "webcam-video" ''
+#!/bin/sh
+out="$1"
+${pkgs.ffmpeg}/bin/ffmpeg -f video4linux2 -s 1280x720 -r 25 -i /dev/video0 -f oss -i /dev/dsp -f webm "$out"
+'')
+
     # unfree
     spotify
     steam
