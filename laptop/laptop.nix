@@ -29,6 +29,7 @@ in
       ./packages.nix
       ./fonts.nix
       ./graphics.nix
+      ./mail.nix
     ];
 
   boot.loader = {
