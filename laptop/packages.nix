@@ -128,6 +128,7 @@
     supercollider
     supercollider_scel
     jitsi-meet-electron
+    xmoto
 
     (pkgs.writeScriptBin "stumpemacsclient" ''
 #!/bin/sh
