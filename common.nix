@@ -28,13 +28,16 @@ in
 
   networking.hostName = cfg.hostname;
 
-  nielx.commonShellAliases = {
-    ".." = "cd ..";
-    "..." = "cd ../..";
-    "...." = "cd ../../..";
-    "....." = "cd ../../../..";
-    "mv" = "mv -n";
-    "dtrx" = "dtrx -n";
-    "duhst" = "du -hsc";
+  nielx = {
+    gpgKey = "38EEEBCE67324F19";
+    commonShellAliases = {
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+      "....." = "cd ../../../..";
+      "mv" = "mv -n";
+      "dtrx" = "dtrx -n";
+      "duhst" = "du -hsc";
+    };
   };
 }
