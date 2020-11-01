@@ -35,7 +35,7 @@ in
 
   home-manager.users."${cfg.user}" = { pkgs, ... }: {
     home.file.".gnupg/gpg-agent.conf".text = ''
-max-cache-ttl 86400;
+max-cache-ttl 86400
 '';
 
     programs.git = let
