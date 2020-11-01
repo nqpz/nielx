@@ -53,10 +53,10 @@ fi
   in mkIf cfg.enable {
     environment.systemPackages = [ script scriptIfWifi ];
 
-    services.cron = {
-      enable = true;
-      systemCronJobs = [ "${cfg.frequency} ${config.nielx.user} ${scriptIfWifi}/bin/backup-if-wifi"
-                       ];
-    };
+    # services.cron = {
+    #   enable = true;
+    #   systemCronJobs = [ "${cfg.frequency} ${config.nielx.user} ${scriptIfWifi}/bin/backup-if-wifi"
+    #                    ];
+    # };
   };
 }
