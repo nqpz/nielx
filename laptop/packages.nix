@@ -115,8 +115,8 @@ in
     xdotool
     xsel
     xmacro
-    (python27.withPackages (ps: with ps; [ numpy pygtk ]))
-    (python3.withPackages (ps: with ps; [ numpy setuptools requests termcolor pyyaml pygments ]))
+    python
+    python3
     ocaml
     opam
     ocamlPackages.base
