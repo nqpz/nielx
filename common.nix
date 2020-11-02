@@ -52,7 +52,7 @@ default-cache-ttl 86400
 
     programs.git = let
       excludesFile = pkgs.writeText "global-gitignore" ''
-.envrc # lorri
+.envrc
 '';
     in {
       enable = true;
