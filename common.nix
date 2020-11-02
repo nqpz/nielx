@@ -20,7 +20,13 @@ in
   };
 
   services.lorri.enable = true;
-  environment.systemPackages = [ pkgs.direnv ];
+  environment.systemPackages = [
+    pkgs.direnv
+    (pkgs.writeScriptBin "lorri-direnv-init" ''#!/bin/sh
+echo 'eval "$(lorri direnv)"' > .envrc
+direnv allow
+'')
+  ];
 
   home-manager.useGlobalPkgs = true;
 
