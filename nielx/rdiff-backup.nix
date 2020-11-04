@@ -36,6 +36,8 @@ in
     script = pkgs.writeScriptBin "backup" ''
 #!/bin/sh
 
+export SSH_AUTH_SOCK=/run/user/1000/ssh-agent
+
 ${pkgs.time}/bin/time -p \
      ${pkgs.rdiff-backup}/bin/rdiff-backup \
      --include-symbolic-links \
@@ -53,10 +55,13 @@ fi
   in mkIf cfg.enable {
     environment.systemPackages = [ script scriptIfWifi ];
 
-    # services.cron = {
-    #   enable = true;
-    #   systemCronJobs = [ "${cfg.frequency} ${config.nielx.user} ${scriptIfWifi}/bin/backup-if-wifi"
-    #                    ];
-    # };
+    nielx.services.rdiff-backup = {
+      preStart = null;
+      command = "${scriptIfWifi}/bin/backup-if-wifi";
+      packages = [ pkgs.openssh ];
+      user = "${config.nielx.user}";
+      group = "users";
+      when = cfg.frequency;
+    };
   };
 }
