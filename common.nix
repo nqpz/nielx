@@ -95,7 +95,7 @@ ps1_exit_code() {
     fi
     echo -e "\033[$ps1_exit_color[$(printf %3d $ps1_exit_code)]"
 }
-PS1="\$(ps1_exit_code) \033[$ps1_date_color[\$(date +%R)] \033[$ps1_prompt_color\u@\h:\w\\$\033[0m "
+PS1="\$(ps1_exit_code) \[\033[$ps1_date_color\][\$(date +%R)] \[\033[$ps1_prompt_color\]\u@\h:\w\\$\033[0m\] "
 '';
     commonShellAliases = {
       ".." = "cd ..";
