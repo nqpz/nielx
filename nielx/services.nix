@@ -62,7 +62,7 @@ in
     systemd_email = pkgs.writeScript "systemd_email" ''#!/bin/sh
 ${pkgs.postfix}/bin/sendmail -t <<EOF
 To: ${cfg.email}
-# Subject: [${cfg.hostname} systemd] $1
+Subject: [${cfg.hostname} systemd] $1
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain; charset=UTF-8
 
