@@ -22,7 +22,7 @@ in
     imagemagick
     mplayer
     vlc
-    ffmpeg
+    ffmpeg-full
     x264
     bento4
     firefox
