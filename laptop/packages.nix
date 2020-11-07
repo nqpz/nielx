@@ -8,7 +8,6 @@ exec ${src} "$@"
 in
 {
   environment.systemPackages = with pkgs; [
-    nix-index
     emacs
     neomutt
     (binWrapper "mutt" "${pkgs.neomutt}/bin/neomutt")
@@ -40,24 +39,19 @@ in
     go-mtpfs
     git
     syncplay
-    calibre
     tightvnc
     gcc
     clang
     binutils
     gnumake
-    cmake
     stdmanpages
     manpages
     valgrind
     nmap
     bash-completion
-    wmctrl
-    autossh
     sshfs
     pandoc
     htop
-    iotop
     nload
     pciutils
     youtube-dl
@@ -72,47 +66,29 @@ in
     inkscape
     texlive.combined.scheme-full
     ghostscript
-    w3m
-    lynx
     aalib
     libreoffice
     gpicview
-    toilet
-    bc
     ascii
     swiProlog
     (binWrapper "pl" "${pkgs.swiProlog}/bin/swipl")
     tree
     aegisub
     gparted
-    feh
     gnome3.nautilus
-    gnum4
-    automake
-    autoconf
-    libtool
-    socat
     audacity
     gnuapl
     mediainfo
-    bind
     bat
-    rclone
-    zile
     gnome3.cheese
     xawtv
-    gnome3.dconf-editor
     xorg.xmodmap
     xorg.setxkbmap
-    xorg.xsetroot
     xorg.xrandr
-    xorg.xdpyinfo
     xorg.xeyes
-    xorg.xhost
     stumpish
     rlwrap
     stalonetray
-    xdotool
     xsel
     xmacro
     python
@@ -127,17 +103,14 @@ in
     baobab
     lm_sensors
     signal-desktop
+    (binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
     pngcrush
     glxinfo
     cudatoolkit
     element-desktop
     (binWrapper "element" "${pkgs.element-desktop}/bin/element-desktop")
-    qjackctl
-    supercollider
-    supercollider_scel
     jitsi-meet-electron
     xmoto
-    nsjail
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
