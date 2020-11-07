@@ -38,8 +38,7 @@ in
     timeout = 0;
   };
 
-  networking.wireless.enable = true;
-  networking.wireless.userControlled.enable = true;
+  networking.networkmanager.enable = true;
 
   security.apparmor.enable = true; # needed for lxd anyway
 
