@@ -137,6 +137,7 @@ in
     supercollider_scel
     jitsi-meet-electron
     xmoto
+    nsjail
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
