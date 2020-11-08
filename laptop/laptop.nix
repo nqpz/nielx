@@ -111,6 +111,13 @@ background white
   nielx = {
     shellPromptColor = "1;32m";
     rdiff-backup.enable = true;
+
+    path-scripts = {
+      enable = true;
+      scripts = [
+        "disktap/disktap"
+      ];
+    };
   };
 
   # This value determines the NixOS release with which your system is to be

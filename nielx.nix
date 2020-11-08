@@ -19,6 +19,7 @@ in
       ./nielx/gitea.nix
       ./nielx/webhooks.nix
       ./nielx/apps.nix
+      ./nielx/path-scripts.nix
     ];
 
   options.nielx = {
