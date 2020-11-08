@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import shutil
+import subprocess
+
+source = r'''\documentclass[a4paper]{article}
+\usepackage{pdfpages}
+\begin{document}
+\includepdf[pages={%(pages)s}]{%(file)s}
+\end{document}'''
+
+def get_pdf(filename, pages):
+    text = source % dict(file=os.path.abspath(filename), pages=pages)
+    with open('/tmp/pdfsplit.tex', 'w') as f:
+        f.write(text)
+    p = os.getcwd()
+    os.chdir('/tmp')
+    subprocess.call(['pdflatex', 'pdfsplit.tex'])
+    os.chdir(p)
+    shutil.copy('/tmp/pdfsplit.pdf', '%s%s.pdf' % (filename[:-4], pages))
+
+if __name__ == '__main__':
+    filename = sys.argv[1]
+    pages = sys.argv[2]
+    get_pdf(filename, pages)
