@@ -1,16 +1,13 @@
 { config, pkgs, ... }:
 
 let
-  binWrapper = dest: src:
-    (pkgs.writeScriptBin dest ''#!/bin/sh
-exec ${src} "$@"
-'');
+  utils = import ../utils.nix config pkgs;
 in
 {
   environment.systemPackages = with pkgs; [
     emacs
     neomutt
-    (binWrapper "mutt" "${pkgs.neomutt}/bin/neomutt")
+    (utils.binWrapper "mutt" "${pkgs.neomutt}/bin/neomutt")
     offlineimap
     urlview
     ack
@@ -71,7 +68,7 @@ in
     gpicview
     ascii
     swiProlog
-    (binWrapper "pl" "${pkgs.swiProlog}/bin/swipl")
+    (utils.binWrapper "pl" "${pkgs.swiProlog}/bin/swipl")
     tree
     aegisub
     gparted
@@ -103,12 +100,12 @@ in
     baobab
     lm_sensors
     signal-desktop
-    (binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
+    (utils.binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
     pngcrush
     glxinfo
     cudatoolkit
     element-desktop
-    (binWrapper "element" "${pkgs.element-desktop}/bin/element-desktop")
+    (utils.binWrapper "element" "${pkgs.element-desktop}/bin/element-desktop")
     jitsi-meet-electron
     xmoto
 
@@ -144,15 +141,15 @@ mode="$3" # screen, ebook, or printer
 ${pkgs.ghostscript}/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/$mode -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$out" "$in"
 '')
 
-    (binWrapper "virtualbox" "${pkgs.virtualbox}/bin/VirtualBox")
+    (utils.binWrapper "virtualbox" "${pkgs.virtualbox}/bin/VirtualBox")
 
     # unfree
     spotify
     steam
     slack
     google-chrome
-    (binWrapper "chrome" "${pkgs.google-chrome}/bin/google-chrome-stable")
+    (utils.binWrapper "chrome" "${pkgs.google-chrome}/bin/google-chrome-stable")
     discord
-    (binWrapper "discord" "${pkgs.discord}/bin/Discord")
+    (utils.binWrapper "discord" "${pkgs.discord}/bin/Discord")
   ];
 }

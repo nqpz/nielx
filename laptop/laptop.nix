@@ -2,23 +2,7 @@
 
 let
   cfg = config.nielx;
-
-  # Sometimes it's nice to be able to live-edit a file instead of waiting for
-  # 'nixos-rebuild switch' to copy it and finish.  This function addresses that
-  # usecase by making a derivation that symlinks to the actual file in this
-  # repository.  I guess this is a bit wrong.
-  symlinkTo = source:
-    let
-      linkDir = pkgs.stdenv.mkDerivation {
-        name = "symlink";
-        phases = "installPhase";
-        installPhase = ''
-mkdir -p $out
-ln -s ${cfg.root}/laptop/${source} $out/symlink
-'';
-      };
-    in
-      "${linkDir}/symlink";
+  utils = import ../utils.nix config pkgs;
 in
 {
   imports =
@@ -119,7 +103,7 @@ background white
 (require 'niels)
 '';
 
-    home.file.".stumpwmrc".source = symlinkTo "stumpwmrc";
+    home.file.".stumpwmrc".source = utils.symlinkTo "stumpwmrc";
   };
 
   # Enable things through the nielx wrapper.  Sensitive information is kept
