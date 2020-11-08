@@ -128,6 +128,13 @@ background white
           script = "alart";
           nix = true;
         }
+
+        # https://github.com/nqpz/aeltei
+        {
+          dir = "aeltei";
+          script = "aeltei";
+          nix = true;
+        }
       ];
     };
   };
