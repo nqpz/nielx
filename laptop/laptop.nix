@@ -115,7 +115,7 @@ background white
     path-scripts = {
       enable = true;
       scripts = [
-        "disktap/disktap"
+        "disktap/disktap" # https://github.com/nqpz/disktap
       ];
     };
   };
