@@ -67,7 +67,4 @@
 ;; OpenCL.
 (add-to-list 'auto-mode-alist '("\\.cl\\'" . opencl-mode))
 
-;; Supercollider.
-(require 'sclang)
-
 (provide 'niels-modes)
