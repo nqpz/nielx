@@ -115,7 +115,19 @@ background white
     path-scripts = {
       enable = true;
       scripts = [
-        "disktap/disktap" # https://github.com/nqpz/disktap
+        # https://github.com/nqpz/disktap
+        {
+          dir = "disktap";
+          script = "disktap";
+          nix = false;
+        }
+
+        # https://github.com/nqpz/alart
+        {
+          dir = "alart";
+          script = "alart";
+          nix = true;
+        }
       ];
     };
   };
