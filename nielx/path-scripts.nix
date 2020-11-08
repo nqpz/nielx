@@ -39,7 +39,12 @@ in
           d = "${cfg.root}/${data.dir}";
           s = data.script;
         in
-          # There is some overhead in this, but not too much.
+          # There is some overhead in this, but not too much.  The nice thing is
+          # that we won't have to rebuild the system if these external projects
+          # change something.  If they were more central to this repository, we
+          # could instead integrate them fully and not have this slight
+          # nix-shell entering overhead, but then we would lose the other
+          # benefit.
           if data.nix
           then pkgs.writeScriptBin s ''#!/bin/sh
 exec ${pkgs.nix}/bin/nix-shell --command "${d}/${s} $@" ${d}/shell.nix''
