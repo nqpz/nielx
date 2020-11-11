@@ -24,6 +24,7 @@ in
     firefox
     (chromium.override { enableVaapi = true; })
     surf
+    w3m
     usbutils
     terminator
     zathura
