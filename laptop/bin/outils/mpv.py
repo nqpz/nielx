@@ -1,6 +1,6 @@
 from outils import *
 
-_media_endings = ['mkv', 'mp4', 'webm', 'ogg', 'ogv', 'mp3', 'm2t', 'flac', 'avi', 'mpg']
+_media_endings = ['mkv', 'mp4', 'webm', 'ogg', 'ogv', 'mp3', 'm2t', 'flac', 'avi', 'mpg', 'mts']
 
 def open(filenames):
     first = filenames[0]
