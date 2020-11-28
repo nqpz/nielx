@@ -89,6 +89,7 @@ in
     stalonetray
     xsel
     xmacro
+    bind
     python
     python3
     ocaml
