@@ -38,5 +38,6 @@
     pngcrush
     python3
     jq
+    bind
   ];
 }
