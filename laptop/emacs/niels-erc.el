@@ -1,5 +1,3 @@
-(add-hook 'erc-mode-hook 'toggle-word-wrap)
-
 (defvar niels-erc-hosts
   "List of IRC hosts to connect to")
 
