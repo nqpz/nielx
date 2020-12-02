@@ -40,5 +40,6 @@
     jq
     bind
     rclone
+    s3cmd
   ];
 }
