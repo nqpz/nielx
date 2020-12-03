@@ -113,6 +113,7 @@ in
     (utils.binWrapper "element" "${pkgs.element-desktop}/bin/element-desktop")
     jitsi-meet-electron
     xmoto
+    wineFull
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
