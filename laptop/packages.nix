@@ -114,6 +114,7 @@ in
     jitsi-meet-electron
     xmoto
     wineFull
+    dosbox
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
