@@ -1,6 +1,6 @@
 from outils import *
 
-_media_endings = ['odt', 'doc', 'docx', 'xls', 'xlsx']
+_media_endings = ['odt', 'doc', 'docx', 'xls', 'xlsx', 'wp']
 
 def open(filenames):
     first = filenames[0]
