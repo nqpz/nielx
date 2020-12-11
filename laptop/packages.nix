@@ -115,6 +115,7 @@ in
     xmoto
     wineFull
     dosbox
+    qemu
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
