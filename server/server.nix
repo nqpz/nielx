@@ -7,7 +7,6 @@ in
   imports =
     [ ./hardware-configuration.nix
       ./niv.nix
-      ../nielx.nix
       ../common.nix
       ./simple-emacs.nix
       ./packages.nix

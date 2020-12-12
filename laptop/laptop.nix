@@ -8,7 +8,6 @@ in
   imports =
     [ ./hardware-configuration.nix
       ./niv.nix
-      ../nielx.nix
       ../common.nix
       ./packages.nix
       ./fonts.nix

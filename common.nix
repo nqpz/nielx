@@ -4,6 +4,10 @@ let
   cfg = config.nielx;
 in
 {
+  imports =
+    [ ./nielx.nix
+    ];
+
   nix = {
     gc = {
       automatic = true;
