@@ -39,7 +39,5 @@
     python3
     jq
     bind
-    rclone
-    s3cmd
   ];
 }

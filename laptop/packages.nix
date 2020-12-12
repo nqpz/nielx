@@ -101,9 +101,6 @@ in
     exfat-utils
     baobab
     lm_sensors
-    rclone
-    rclone-browser
-    s3cmd
     signal-desktop
     (utils.binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
     pngcrush
