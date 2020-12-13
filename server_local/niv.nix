@@ -10,6 +10,8 @@ in
 {
   imports =
     [ "${sources.home-manager}/nixos"
+      "${sources.nixos-hardware}/common/cpu/intel"
+      "${sources.nixos-hardware}/common/pc/ssd"
     ];
 
   nix.nixPath = [
