@@ -13,6 +13,9 @@ in
       type = types.listOf types.str;
       example = [ "/var/lib" ];
     };
+    ignore = mkOption {
+      type = types.listOf types.str;
+    };
     destination = mkOption {
       type = types.str;
       example = "b2://...";
@@ -31,8 +34,8 @@ in
       enable = true;
       frequency = cfg.frequency;
       root = "/";
-      exclude = [ "**" ];
       include = cfg.paths;
+      exclude = cfg.ignore ++ [ "**" ];
       targetUrl = cfg.destination;
       secretFile = pkgs.writeText "secrets" "PASSPHRASE=${cfg.password}";
     };

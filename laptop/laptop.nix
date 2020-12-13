@@ -109,7 +109,6 @@ background white
   # separate.
   nielx = {
     shellPromptColor = "1;32m";
-    rdiff-backup.enable = true;
 
     path-scripts = {
       enable = true;

@@ -56,7 +56,6 @@ in
     transmission-remote-gtk
     acpi
     dtrx
-    rdiff-backup
     zip
     unzip
     iw
