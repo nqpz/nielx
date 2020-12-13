@@ -39,5 +39,7 @@
     python3
     jq
     bind
+    imagemagick
+    stack
   ];
 }
