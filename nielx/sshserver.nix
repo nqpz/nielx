@@ -19,6 +19,7 @@ in
     services.openssh = {
       enable = true;
       permitRootLogin = "no";
+      passwordAuthentication = false;
       ports = [ cfg.port ];
     };
   };
