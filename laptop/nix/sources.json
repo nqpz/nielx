@@ -1,4 +1,16 @@
 {
+    "NUR": {
+        "branch": "master",
+        "description": "Nix User Repository: User contributed nix packages [maintainer=@Mic92]",
+        "homepage": "",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "7458a3a7285e272785d6035314c94c336e72c7b7",
+        "sha256": "0gc9wkwqx825828cjask9xpm1s6zfsgqpd10ixh4y73dmrl48f7y",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/NUR/archive/7458a3a7285e272785d6035314c94c336e72c7b7.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "home-manager": {
         "branch": "master",
         "description": "Manage a user environment using Nix  [maintainer=@rycee] ",

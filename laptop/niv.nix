@@ -1,10 +1,13 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   sources = import ./nix/sources.nix;
 
   overlay_niv = _: _: {
     niv = (import sources.niv {}).niv;
+  };
+  overlay_nur = _: super: {
+    nur = import sources.NUR { pkgs = super; };
   };
 in
 {
@@ -23,7 +26,7 @@ in
 
   nixpkgs.pkgs = import sources.nixpkgs {
     config.allowUnfree = true;
-    overlays = [ overlay_niv ];
+    overlays = [ overlay_niv overlay_nur ];
   };
 
   environment.systemPackages = [ pkgs.niv ];
