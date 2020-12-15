@@ -1,16 +1,24 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-# A basic console Emacs setup.
+with lib;
 
+let
+  cfg = config.nielx.simple-emacs;
+in
 {
-  nixpkgs.overlays =
-    [ (self: super:
-      {
-        emacs = (pkgs.emacsPackagesFor ((super.emacs.override {
-          withX = false;
-          withGTK3 = false;
-        }).overrideAttrs (attrs: {
-          postInstall = (attrs.postInstall or "") + ''
+  options.nielx.simple-emacs = {
+    enable = mkEnableOption "a basic console Emacs setup";
+  };
+
+  config = mkIf cfg.enable {
+    nixpkgs.overlays =
+      [ (self: super:
+        {
+          emacs = (pkgs.emacsPackagesFor ((super.emacs.override {
+            withX = false;
+            withGTK3 = false;
+          }).overrideAttrs (attrs: {
+            postInstall = (attrs.postInstall or "") + ''
       cat > $out/share/emacs/site-lisp/default.el <<EOF
       (require 'undo-tree)
       (global-undo-tree-mode)
@@ -32,16 +40,17 @@
       (global-set-key (kbd "RET") 'newline-and-indent)
       EOF
     '';
-        }))).emacsWithPackages (epkgs: with epkgs; [
-          undo-tree
-          ack
-          smex
-          nix-mode
-          magit
-          org
-          markdown-mode
-          multiple-cursors
-        ]);
-      })
-    ];
+          }))).emacsWithPackages (epkgs: with epkgs; [
+            undo-tree
+            ack
+            smex
+            nix-mode
+            magit
+            org
+            markdown-mode
+            multiple-cursors
+          ]);
+        })
+      ];
+  };
 }

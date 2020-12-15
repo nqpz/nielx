@@ -48,6 +48,7 @@ in
   # separate.
   nielx = {
     shellPromptColor = "1;33m";
+    simple-emacs.enable = true;
     sshserver.enable = true;
     duplicity.enable = true;
     longview.enable = true;

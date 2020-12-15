@@ -19,6 +19,7 @@ in
       ./nielx/webhooks.nix
       ./nielx/apps.nix
       ./nielx/path-scripts.nix
+      ./nielx/simple-emacs.nix
     ];
 
   options.nielx = {
