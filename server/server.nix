@@ -8,7 +8,6 @@ in
     [ ./hardware-configuration.nix
       ./niv.nix
       ../common.nix
-      ./simple-emacs.nix
       ./packages.nix
       ./www.nix
     ];
