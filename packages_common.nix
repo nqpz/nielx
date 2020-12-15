@@ -1,0 +1,42 @@
+{ config, pkgs, ... }:
+
+{
+  environment.systemPackages = with pkgs; [
+    inetutils
+    mtr
+    sysstat
+    rsync
+    htop
+    iotop
+    pciutils
+    nload
+    emacs
+    ack
+    manpages
+    stdmanpages
+    file
+    tmux
+    screen
+    whois
+    wget
+    git
+    gcc
+    clang
+    binutils
+    gnumake
+    cmake
+    bash-completion
+    autojump
+    sshfs
+    dtrx
+    zip
+    unzip
+    tree
+    bat
+    mailutils
+    pngcrush
+    python3
+    jq
+    bind
+  ];
+}

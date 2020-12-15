@@ -5,15 +5,10 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    emacs
     neomutt
     (utils.binWrapper "mutt" "${pkgs.neomutt}/bin/neomutt")
     offlineimap
     urlview
-    ack
-    file
-    tmux
-    screen
     stack
     imagemagick
     mplayer
@@ -32,32 +27,15 @@ in
     rustup
     pavucontrol
     sox
-    whois
-    wget
     go-mtpfs
-    git
     syncplay
     tightvnc
-    gcc
-    clang
-    binutils
-    gnumake
-    stdmanpages
-    manpages
     valgrind
     nmap
-    bash-completion
-    sshfs
     pandoc
-    htop
-    nload
-    pciutils
     youtube-dl
     transmission-remote-gtk
     acpi
-    dtrx
-    zip
-    unzip
     iw
     gimp
     inkscape
@@ -69,14 +47,12 @@ in
     ascii
     swiProlog
     (utils.binWrapper "pl" "${pkgs.swiProlog}/bin/swipl")
-    tree
     aegisub
     gparted
     gnome3.nautilus
     audacity
     gnuapl
     mediainfo
-    bat
     gnome3.cheese
     xawtv
     xorg.xmodmap
@@ -88,9 +64,6 @@ in
     stalonetray
     xsel
     xmacro
-    bind
-    python
-    python3
     ocaml
     opam
     ocamlPackages.base
@@ -102,7 +75,6 @@ in
     lm_sensors
     signal-desktop
     (utils.binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
-    pngcrush
     glxinfo
     cudatoolkit
     element-desktop

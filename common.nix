@@ -6,6 +6,7 @@ in
 {
   imports =
     [ ./nielx.nix
+      ./packages_common.nix
     ];
 
   nix = {
