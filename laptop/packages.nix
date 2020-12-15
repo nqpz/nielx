@@ -84,6 +84,7 @@ in
     wineFull
     dosbox
     qemu
+    nur.repos.mic92.nixos-shell
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
