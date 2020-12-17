@@ -10,6 +10,7 @@ in
     [ ./nielx/sshserver.nix
       ./nielx/services.nix
       ./nielx/duplicity.nix
+      ./nielx/duplicity-local.nix
       ./nielx/longview.nix
       ./nielx/matrix.nix
       ./nielx/feedmael.nix
