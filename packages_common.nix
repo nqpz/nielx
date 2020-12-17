@@ -33,7 +33,6 @@
     unzip
     tree
     bat
-    mailutils
     pngcrush
     python3
     jq
