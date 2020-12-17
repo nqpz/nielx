@@ -7,5 +7,6 @@
     ffmpeg-full
     x264
     bento4
+    surf
   ];
 }
