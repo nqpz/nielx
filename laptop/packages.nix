@@ -16,6 +16,7 @@ in
     ffmpeg-full
     x264
     bento4
+    kdenlive
     firefox
     (chromium.override { enableVaapi = true; })
     surf
