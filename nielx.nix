@@ -77,6 +77,18 @@ in
       };
     };
 
+    graphics = {
+      timeToLock = mkOption {
+        type = types.int;
+      };
+      timeToLockOnWifi = mkOption {
+        type = types.int;
+      };
+      lockUnlessWifi = mkOption {
+        type = types.str;
+      };
+    };
+
 
     # Derived values.
 
