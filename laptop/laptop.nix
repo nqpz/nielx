@@ -30,6 +30,7 @@ in
   services.redshift.enable = true;
 
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.hplip ];
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
