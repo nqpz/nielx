@@ -21,6 +21,10 @@ in
       type = types.int;
     };
 
+    sshPort = mkOption {
+      type = types.int;
+    };
+
     dbpassword = mkOption {
       type = types.str;
     };
@@ -53,6 +57,10 @@ in
       domain = "${cfg.domain}";
       rootUrl = "https://${cfg.domain}/";
       httpPort = cfg.port;
+      ssh = {
+        enable = true;
+        clonePort = cfg.sshPort;
+      };
       settings = let
         docutils = pkgs.python3.withPackages (ps: with ps; [ docutils pygments ]);
       in {
@@ -78,6 +86,7 @@ in
         repository = {
           DEFAULT_PRIVATE = "public";
           ENABLE_PUSH_CREATE_USER = true;
+          USE_COMPAT_SSH_URI = true;
         };
         "cron.archive_cleanup" = {
           SCHEDULE = "@every 1h";
