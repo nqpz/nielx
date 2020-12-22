@@ -66,10 +66,11 @@ in
     xsel
     xmacro
     ocaml
-    opam
-    ocamlPackages.base
+    dune_2
     ocamlPackages.findlib
-    dune
+    ocamlPackages.core
+    ocamlPackages.async
+    ocamlPackages.async_ssl
     ntfs3g
     exfat-utils
     baobab
