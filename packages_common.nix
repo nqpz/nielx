@@ -37,5 +37,6 @@
     python3
     jq
     bind
+    lm_sensors
   ];
 }

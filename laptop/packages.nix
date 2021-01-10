@@ -74,7 +74,6 @@ in
     ntfs3g
     exfat-utils
     baobab
-    lm_sensors
     signal-desktop
     (utils.binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
     glxinfo
