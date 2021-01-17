@@ -52,7 +52,6 @@ in
     gparted
     gnome3.nautilus
     audacity
-    gnuapl
     mediainfo
     gnome3.cheese
     xawtv
@@ -77,7 +76,6 @@ in
     signal-desktop
     (utils.binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
     glxinfo
-    cudatoolkit
     element-desktop
     (utils.binWrapper "element" "${pkgs.element-desktop}/bin/element-desktop")
     jitsi-meet-electron
