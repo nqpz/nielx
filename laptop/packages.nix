@@ -80,6 +80,7 @@ in
     (utils.binWrapper "element" "${pkgs.element-desktop}/bin/element-desktop")
     jitsi-meet-electron
     xmoto
+    cfdg
     wineFull
     dosbox
     qemu
@@ -127,5 +128,6 @@ ${pkgs.ghostscript}/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTI
     (utils.binWrapper "chrome" "${pkgs.google-chrome}/bin/google-chrome-stable")
     discord
     (utils.binWrapper "discord" "${pkgs.discord}/bin/Discord")
+    zoom-us
   ];
 }
