@@ -118,8 +118,6 @@ mode="$3" # screen, ebook, or printer
 ${pkgs.ghostscript}/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/$mode -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$out" "$in"
 '')
 
-    (utils.binWrapper "virtualbox" "${pkgs.virtualbox}/bin/VirtualBox")
-
     # unfree
     spotify
     steam
