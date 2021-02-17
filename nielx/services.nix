@@ -19,7 +19,7 @@ let
   makeServiceService = name: { preStart, command, packages, user, group, when }: {
     enable = true;
     wants = if when != null then [ "${name}.timer" ] else [];
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = if when != null then [] else [ "multi-user.target" ];
     path = packages;
     onFailure = [ "status_email_user@${name}.service" ];
     serviceConfig = {
