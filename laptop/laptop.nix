@@ -13,7 +13,7 @@ in
       ./fonts.nix
       ./graphics.nix
       ./mail.nix
-      ./virtualbox.nix
+      # ./virtualbox.nix
     ];
 
   boot.loader = {
