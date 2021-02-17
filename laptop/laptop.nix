@@ -13,6 +13,7 @@ in
       ./fonts.nix
       ./graphics.nix
       ./mail.nix
+      ./virtualbox.nix
     ];
 
   boot.loader = {
@@ -51,14 +52,6 @@ in
   # For X11 and pulseaudio to work with LXD.
   users.users.root.subUidRanges = [{ startUid = 1000; count = 1; }];
   users.users.root.subGidRanges = [{ startGid = 100; count = 1; }];
-
-  virtualisation.virtualbox.host.enable = true;
-
-  # unfree
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-
-  users.extraGroups.vboxusers.members = [ cfg.user ];
 
   users.users."${cfg.user}" = {
     isNormalUser = true;
