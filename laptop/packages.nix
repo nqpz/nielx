@@ -26,7 +26,6 @@ in
     zathura
     evince
     rustup
-    pavucontrol
     sox
     go-mtpfs
     syncplay

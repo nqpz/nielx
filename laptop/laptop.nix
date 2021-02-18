@@ -13,6 +13,7 @@ in
       ./fonts.nix
       ./graphics.nix
       ./mail.nix
+      ./audio.nix
       # ./virtualbox.nix
     ];
 
@@ -35,13 +36,6 @@ in
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    support32Bit = true;
-    extraModules = [ pkgs.pulseaudio-modules-bt ];
-  };
 
   virtualisation.docker.enable = true;
 

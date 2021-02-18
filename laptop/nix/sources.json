@@ -23,6 +23,18 @@
         "url": "https://github.com/rycee/home-manager/archive/1ee1d01daa19b3a6d16b5fb680c31a2bc110ce24.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "musnix": {
+        "branch": "master",
+        "description": "Real-time audio in NixOS",
+        "homepage": "",
+        "owner": "musnix",
+        "repo": "musnix",
+        "rev": "06eaf399789af403133dc8e5ab370c8f2c51d4f5",
+        "sha256": "1s05mvmpsal99x45n6lzrjj71lyhggwh43vya4n2zyi698y47n9v",
+        "type": "tarball",
+        "url": "https://github.com/musnix/musnix/archive/06eaf399789af403133dc8e5ab370c8f2c51d4f5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",

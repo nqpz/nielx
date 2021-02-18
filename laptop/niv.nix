@@ -13,6 +13,7 @@ in
 {
   imports =
     [ "${sources.home-manager}/nixos"
+      "${sources.musnix}"
       "${sources.nixos-hardware}/lenovo/thinkpad/t480s"
       "${sources.nixos-hardware}/common/pc/ssd"
     ];
