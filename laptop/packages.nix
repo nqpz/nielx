@@ -84,6 +84,7 @@ in
     dosbox
     qemu
     nur.repos.mic92.nixos-shell
+    supercollider
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.

@@ -67,4 +67,19 @@
 ;; OpenCL.
 (add-to-list 'auto-mode-alist '("\\.cl\\'" . opencl-mode))
 
+;; Tidal.
+
+(setq tidal-dir "/home/niels/ext/Tidal")
+(setq tidal-interpreter "bash")
+(setq tidal-interpreter-arguments (list "-c" (concat "''cd " tidal-dir " && stack exec ghci''")))
+(setq tidal-boot-script-filepath
+      (list (cons "path" (concat "cd " tidal-dir " && echo -n data-dir: && stack ghc -- -e 'import Paths_tidal' -e 'getDataDir>>=putStr' 2>/dev/null"))
+            (cons "separator" "/")))
+(setq tidal-boot-script-path
+      (concat
+       (string-trim (cadr (split-string
+                           (shell-command-to-string (cdr (assoc "path" tidal-boot-script-filepath))) ":")))
+       (cdr (assoc "separator" tidal-boot-script-filepath))
+       "BootTidal.hs"))
+
 (provide 'niels-modes)
