@@ -85,6 +85,8 @@
   (run-or-raise "chromium-browser" '(:title "Chromium")))
 (defcommand emacs () ()
   (run-or-raise "emacs" '(:class "Emacs")))
+(defcommand pavucontrol () ()
+  (run-or-raise "pavucontrol" '(:title "Volume Control")))
 
 (define-key *root-map* (kbd "<") "terminal")
 (define-key *root-map* (kbd ">") "firefox")
@@ -94,6 +96,7 @@
 (define-key *root-map* (kbd "C->") "firefox")
 (define-key *root-map* (kbd "C-aring") "zathura")
 (define-key *root-map* (kbd "C-c") "chromium")
+(define-key *root-map* (kbd "C-p") "pavucontrol")
 
 ;; Groups
 (gnew "Left")
