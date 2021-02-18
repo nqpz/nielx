@@ -73,7 +73,8 @@ disown
 
     windowManager.stumpwm.enable = true;
 
-    videoDrivers = [ "beignet" ];
+    videoDrivers = [ "intel" ];
+    useGlamor = true;
   };
 
   nixpkgs.config.packageOverrides = pkgs: {
@@ -86,7 +87,6 @@ disown
       vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
       libvdpau-va-gl
-      beignet
     ];
 
     driSupport32Bit = true;
