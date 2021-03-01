@@ -90,7 +90,7 @@ background white
 (require 'niels)
 '';
 
-    home.file.".stumpwmrc".source = utils.symlinkTo "stumpwmrc";
+    home.file.".stumpwmrc".source = utils.symlinkTo "stumpwmrc.cl";
 
     home.file.".config/terminator/config".source = ./terminator.cfg;
   };
