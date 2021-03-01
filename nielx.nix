@@ -44,6 +44,10 @@ in
       type = types.str;
     };
 
+    nixos_config_directory = mkOption {
+      type = types.str;
+    };
+
     gpgKey = mkOption {
       type = types.str;
     };
