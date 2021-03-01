@@ -91,6 +91,8 @@ background white
 '';
 
     home.file.".stumpwmrc".source = utils.symlinkTo "stumpwmrc";
+
+    home.file.".config/terminator/config".source = ./terminator.cfg;
   };
 
   # Enable things through the nielx wrapper.  Sensitive information is kept
