@@ -18,6 +18,7 @@ in
     pavucontrol
     # Test JACK with jack_simple_client.
     libjack2 jack2 qjackctl libjack2 jack2 qjackctl jack2Full jack_capture
+    timidity vkeybd
   ];
 
   musnix = {
