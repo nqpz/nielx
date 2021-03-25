@@ -18,7 +18,7 @@ in
     bento4
     kdenlive
     firefox
-    (chromium.override { enableVaapi = true; })
+    chromium
     surf
     w3m
     usbutils
@@ -83,7 +83,7 @@ in
     wineFull
     dosbox
     qemu
-    nur.repos.mic92.nixos-shell
+    nixos-shell
     supercollider
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
