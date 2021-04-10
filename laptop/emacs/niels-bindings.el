@@ -28,5 +28,7 @@
 (global-set-key (kbd "s-g") 'customize-group)
 (global-set-key (kbd "C-c m") '(lambda () (interactive) (compile "make")))
 (global-set-key (kbd "C-c RET") '(lambda () (interactive) (and (compile "make"))))
+(global-set-key (kbd "s-a") 'windmove-left)
+(global-set-key (kbd "s-b") 'windmove-right)
 
 (provide 'niels-bindings)
