@@ -73,8 +73,13 @@ disown
 
     windowManager.stumpwm.enable = true;
 
-    videoDrivers = [ "intel" ];
     useGlamor = true;
+  };
+
+  services.picom = {
+    enable = true;
+    vSync = true;
+    backend = "glx";
   };
 
   nixpkgs.config.packageOverrides = pkgs: {
@@ -87,6 +92,7 @@ disown
       vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
       libvdpau-va-gl
+      intel-compute-runtime
     ];
 
     driSupport32Bit = true;
