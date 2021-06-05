@@ -14,7 +14,7 @@ in
       ./graphics.nix
       ./mail.nix
       ./audio.nix
-      # ./virtualbox.nix
+      ./virtualbox.nix
     ];
 
   boot.loader = {
@@ -24,8 +24,6 @@ in
   };
 
   networking.networkmanager.enable = true;
-
-  security.apparmor.enable = true; # needed for lxd anyway
 
   console.useXkbConfig = true;
 
