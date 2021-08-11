@@ -85,6 +85,7 @@ in
     qemu
     nixos-shell
     supercollider
+    wrap
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
