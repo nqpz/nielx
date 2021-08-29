@@ -86,6 +86,7 @@ in
     nixos-shell
     supercollider
     wrap
+    (agda.withPackages (ps: with ps; [ standard-library ]))
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
