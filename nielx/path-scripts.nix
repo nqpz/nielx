@@ -47,7 +47,8 @@ in
           # benefit.
           if data.nix
           then pkgs.writeScriptBin s ''#!/bin/sh
-exec ${pkgs.nix}/bin/nix-shell --command "${d}/${s} $@" ${d}/shell.nix''
+args="$@"
+exec ${pkgs.nix}/bin/nix-shell --command "${d}/${s} $args" ${d}/shell.nix''
           else utils.binWrapper s "${d}/${s}") cfg.scripts;
   };
 }
