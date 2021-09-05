@@ -14,6 +14,7 @@ in
       ./nielx/longview.nix
       ./nielx/matrix.nix
       ./nielx/feedmael.nix
+      ./nielx/roundworm.nix
       ./nielx/irc.nix
       ./nielx/postfix_relayhost.nix
       ./nielx/gitea.nix
