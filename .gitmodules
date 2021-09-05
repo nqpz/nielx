@@ -1,3 +1,6 @@
 [submodule "feedmael"]
 	path = nielx/feedmael
 	url = https://github.com/nqpz/feedmael.git
+[submodule "nielx/roundworm"]
+	path = nielx/roundworm
+	url = https://github.com/nqpz/roundworm.git
