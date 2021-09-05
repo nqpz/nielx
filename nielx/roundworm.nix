@@ -16,6 +16,10 @@ in
     domain = mkOption {
       type = types.str;
     };
+
+    port = mkOption {
+      type = types.int;
+    };
   };
 
   config = mkIf cfg.enable {
@@ -26,6 +30,13 @@ in
       group = "users";
       preStart = null;
       when = null;
+    };
+
+    services.nginx.virtualHosts."${cfg.domain}" = {
+      forceSSL = true;
+      enableACME = true;
+      serverAliases = [ "www.${cfg.domain}" ];
+      locations."/".proxyPass = "http://localhost:${builtins.toString cfg.port}";
     };
   };
 }
