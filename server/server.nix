@@ -53,6 +53,7 @@ in
     longview.enable = true;
     matrix.enable = true;
     feedmael.enable = true;
+    roundworm.enable = true;
     irc.enable = true;
   };
 
