@@ -20,10 +20,12 @@ in
 
   config = mkIf cfg.enable {
     nielx.services.roundworm = {
-      command = "${config.nielx.root}/nielx/roundworm/roundworm ${cfg.config}";
+      command = "${config.nielx.root}/nielx/roundworm/roundworm serve ${cfg.config}";
       packages = (import ./roundworm/shell.nix).buildInputs;
       user = config.nielx.user;
       group = "users";
+      preStart = null;
+      when = null;
     };
   };
 }
