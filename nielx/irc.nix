@@ -74,6 +74,11 @@ in
       };
     };
 
+    users.users.bitlbee = mkIf cfg.bitlbee.enable {
+      group = "bitlbee";
+    };
+    users.groups.bitlbee = mkIf cfg.bitlbee.enable {};
+
     nixpkgs.config.bitlbee.enableLibPurple = cfg.bitlbee.enable;
     services.bitlbee = mkIf cfg.bitlbee.enable {
       enable = true;
