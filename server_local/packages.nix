@@ -9,5 +9,6 @@
     x264
     bento4
     surf
+    lynx
   ];
 }
