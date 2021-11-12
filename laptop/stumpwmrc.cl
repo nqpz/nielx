@@ -76,7 +76,7 @@
 
 ;; Programs
 (defcommand terminal () ()
-  (run-or-raise "terminator" '(:class "terminator")))
+  (run-or-raise "terminator" '(:class "Terminator")))
 (defcommand firefox () ()
   (run-or-raise "firefox" '(:class "Firefox")))
 (defcommand zathura () ()
