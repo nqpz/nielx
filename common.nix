@@ -15,6 +15,7 @@ in
       dates = "weekly";
     };
     autoOptimiseStore = true;
+#    extraOptions = "experimental-features = nix-command flakes";
   };
 
   programs.ssh = {

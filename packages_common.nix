@@ -51,7 +51,7 @@ cd ${cfg.root}/${cfg.nixos_config_directory}
 
 ${pkgs.niv}/bin/niv update
 
-nixpkgs=$(${pkgs.nix}/bin/nix eval '(let sources = import ./nix/sources.nix; in "${"$" + "{sources.nixpkgs}"}")' | tr -d '"')
+nixpkgs=$(echo '"${"$" + "{(import ./nix/sources.nix).nixpkgs}"}"' | nix repl 2>/dev/null | tr -d '"')
 
 sudo nixos-rebuild switch -I nixpkgs=$nixpkgs -I nixos=$nixpkgs -I nixos-config=/etc/nixos/configuration.nix
 '')

@@ -41,6 +41,7 @@ in
 
 export PASSPHRASE=${cfg.password}
 export SSH_AUTH_SOCK=/run/user/1000/ssh-agent
+export PYTHONPATH=${pkgs.python39.withPackages (ps: [ps.pexpect])}/lib/python3.9/site-packages:$PYTHONPATH
 
 ${pkgs.time}/bin/time -p \
      ${pkgs.duplicity}/bin/duplicity \
