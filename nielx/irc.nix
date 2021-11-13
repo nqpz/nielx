@@ -76,6 +76,7 @@ in
 
     users.users.bitlbee = mkIf cfg.bitlbee.enable {
       group = "bitlbee";
+      isSystemUser = true;
     };
     users.groups.bitlbee = mkIf cfg.bitlbee.enable {};
 
