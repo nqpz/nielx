@@ -14,7 +14,7 @@ in
       ./graphics.nix
       ./mail.nix
       ./audio.nix
-      ./virtualbox.nix
+      # ./virtualbox.nix
     ];
 
   boot.loader = {
