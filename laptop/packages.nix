@@ -85,6 +85,8 @@ in
     nixos-shell
     supercollider
     wrap
+    lua
+    love_11
     (agda.withPackages (ps: with ps; [ standard-library ]))
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
