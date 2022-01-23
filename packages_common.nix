@@ -31,7 +31,6 @@ in
     bash-completion
     autojump
     sshfs
-    dtrx
     zip
     unzip
     tree
