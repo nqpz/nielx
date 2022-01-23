@@ -16,7 +16,7 @@
 
   security.acme = {
     acceptTerms = true;
-    email = config.nielx.email;
+    defaults.email = config.nielx.email;
   };
 
   services.nginx = {
