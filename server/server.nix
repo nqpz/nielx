@@ -51,7 +51,7 @@ in
     sshserver.enable = true;
     duplicity.enable = true;
     longview.enable = true;
-    matrix.enable = true;
+    # matrix.enable = true;
     feedmael.enable = true;
     roundworm.enable = true;
     irc.enable = true;
