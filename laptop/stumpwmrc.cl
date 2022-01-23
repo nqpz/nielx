@@ -97,6 +97,8 @@
 (define-key *root-map* (kbd "C-aring") "zathura")
 (define-key *root-map* (kbd "C-c") "chromium")
 (define-key *root-map* (kbd "C-p") "pavucontrol")
+(shelldef screenshot "screenshot")
+(define-key *top-map* (kbd "F10") "screenshot")
 
 ;; Groups
 (gnew "Left")
