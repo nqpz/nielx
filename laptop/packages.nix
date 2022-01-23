@@ -29,7 +29,6 @@ in
     sox
     go-mtpfs
     syncplay
-    tightvnc
     valgrind
     nmap
     pandoc
