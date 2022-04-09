@@ -15,7 +15,7 @@ in
     nload
     emacs
     ack
-    manpages
+    man-pages
     stdmanpages
     file
     tmux
