@@ -69,7 +69,7 @@ in
     ocamlPackages.async
     ocamlPackages.async_ssl
     ntfs3g
-    exfat-utils
+    exfat
     baobab
     signal-desktop
     (utils.binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
@@ -79,7 +79,7 @@ in
     jitsi-meet-electron
     xmoto
     cfdg
-    wineFull
+    winePackages.full
     dosbox
     qemu
     nixos-shell
