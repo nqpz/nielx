@@ -78,7 +78,7 @@
 (defcommand terminal () ()
   (run-or-raise "terminator" '(:class "Terminator")))
 (defcommand firefox () ()
-  (run-or-raise "firefox" '(:class "Firefox")))
+  (run-or-raise "firefox" '(:title "Firefox")))
 (defcommand zathura () ()
   (run-or-raise "zathura" '(:class "Zathura")))
 (defcommand chromium () ()
