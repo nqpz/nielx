@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "92a4b2236658264c9d30c94b144b8b05ed3bdfbf",
-        "sha256": "007amcd2g8z0z9bjh65bgggcw7p0khp21nncpvrapgh53w0a9fid",
+        "rev": "2031fcc5b01d774459356461f5a62eb995fb8224",
+        "sha256": "0f7g8cgd5xwhn7hcdlbpzzhzyvwl9hf2f8pc2f5v8mwa012mmnr5",
         "type": "tarball",
-        "url": "https://github.com/nix-community/NUR/archive/92a4b2236658264c9d30c94b144b8b05ed3bdfbf.tar.gz",
+        "url": "https://github.com/nix-community/NUR/archive/2031fcc5b01d774459356461f5a62eb995fb8224.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "home-manager": {
@@ -17,10 +17,10 @@
         "homepage": "https://nix-community.github.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "d49d68f4196d32c5039cb9e91d730cee894f6f14",
-        "sha256": "04x79p4c5l3qi990ja7zacibip4p4pn62ingvs1cfnrvdcl615z7",
+        "rev": "93a69d07389311ffd6ce1f4d01836bbc2faec644",
+        "sha256": "0z1jzn1923g2q376z4268b4cdif96i7l6lm7bd06z19qqgciqkyz",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/d49d68f4196d32c5039cb9e91d730cee894f6f14.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/93a69d07389311ffd6ce1f4d01836bbc2faec644.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "musnix": {
@@ -65,10 +65,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5181d5945eda382ff6a9ca3e072ed6ea9b547fee",
-        "sha256": "1hljcdmvl2kwlq68pyhlc2g5dswdgb6by9m1pppcdm3a86fhinvh",
+        "rev": "1ffba9f2f683063c2b14c9f4d12c55ad5f4ed887",
+        "sha256": "1zx5zvpvqrgk5mfxzmwf8gd270lz7dkfk563sccp1xlhac15cipg",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/5181d5945eda382ff6a9ca3e072ed6ea9b547fee.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/1ffba9f2f683063c2b14c9f4d12c55ad5f4ed887.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
