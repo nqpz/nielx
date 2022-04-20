@@ -3,25 +3,9 @@
 let
   cfg = config.nielx;
   xmodmapFile = pkgs.writeScript "xmodmap" (builtins.readFile ./xmodmap);
-  lockScript = pkgs.writeScriptBin "lock-screen" ''
-#!/bin/sh
-
-exec ${pkgs.lightlocker}/bin/light-locker-command -l
-'';
-  lockScriptUnlessWifi = pkgs.writeScriptBin "lock-screen-unless-wifi" ''
-#!/bin/sh
-
-set -e
-
-if ! ${pkgs.iw}/bin/iw wlp3s0 link | grep -q ${cfg.graphics.lockUnlessWifi}; then
-   ${lockScript}/bin/lock-screen
-fi
-'';
 in
 {
   services.fractalart.enable = true;
-
-  environment.systemPackages = [ lockScript ];
 
   services.xserver = {
     enable = true;
@@ -43,21 +27,7 @@ ${pkgs.xorg.setxkbmap}/bin/setxkbmap dk dvorak
 ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:swapcaps
 ${pkgs.xorg.xmodmap}/bin/xmodmap ${xmodmapFile}
 ${pkgs.xorg.xsetroot}/bin/xsetroot -cursor_name left_ptr
-if ! pgrep light-locker; then
-  ${pkgs.lightlocker}/bin/light-locker --lock-on-lid &
-  disown
-fi
-if ! pgrep xss-lock; then
-  ${pkgs.xss-lock}/bin/xss-lock -n ${lockScriptUnlessWifi}/bin/lock-screen-unless-wifi -- ${lockScript}/bin/lock-screen -n &
-  disown
-fi
-{
-  sleep 15
-  ${pkgs.xorg.xset}/bin/xset s on
-  ${pkgs.xorg.xset}/bin/xset s ${builtins.toString cfg.graphics.timeToLock} ${builtins.toString (cfg.graphics.timeToLockOnWifi - cfg.graphics.timeToLock)}
-  ${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
-} &
-disown
+${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
 . ${import ./exports.nix cfg pkgs}
 '';
     };
