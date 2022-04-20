@@ -88,6 +88,7 @@ in
     wrap
     lua
     love_11
+    python39Packages.pygments
     (agda.withPackages (ps: with ps; [ standard-library ]))
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
