@@ -79,6 +79,9 @@ default-cache-ttl 86400
         core = {
           excludesfile = "${excludesFile}";
         };
+        init = {
+          defaultBranch = "main";
+        };
       };
     };
   };
