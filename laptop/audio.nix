@@ -11,7 +11,6 @@ in
     enable = true;
     package = pkgs.pulseaudio.override { jackaudioSupport = true; };
     support32Bit = true;
-    extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
 
   environment.systemPackages = with pkgs; [
