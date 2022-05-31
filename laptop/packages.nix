@@ -10,6 +10,7 @@ in
     offlineimap
     urlview
     stack
+    cabal-install
     imagemagick
     mplayer
     vlc
@@ -90,6 +91,7 @@ in
     love_11
     python39Packages.pygments
     (agda.withPackages (ps: with ps; [ standard-library ]))
+    inotify-tools
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
