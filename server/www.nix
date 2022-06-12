@@ -99,6 +99,8 @@
           default = /var/www/media/default.nix; command = "./scripts/generate-site.sh"; }
         { route = "/github-web-hook"; dir = "/var/www/burgerforslag";
           default = /var/www/burgerforslag/default.nix; command = "./update"; }
+        { route = "/metanohi-gopher"; dir = "/var/gopher";
+          default = /var/gopher/shell.nix; command = "make"; }
       ];
     };
   };

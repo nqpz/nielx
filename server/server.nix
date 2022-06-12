@@ -55,6 +55,10 @@ in
     feedmael.enable = true;
     roundworm.enable = true;
     irc.enable = true;
+    geomyidae = {
+      enable = true;
+      hostname = "metanohi.name";
+    };
   };
 
   # This value determines the NixOS release from which the default
