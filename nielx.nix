@@ -22,6 +22,7 @@ in
       ./nielx/apps.nix
       ./nielx/path-scripts.nix
       ./nielx/simple-emacs.nix
+      ./nielx/geomyidae.nix
     ];
 
   options.nielx = {
