@@ -92,6 +92,9 @@ in
           SCHEDULE = "@every 1h";
           OLDER_THAN = "1h";
         };
+        webhook = {
+          ALLOWED_HOST_LIST = "*";
+        };
       };
     };
 
