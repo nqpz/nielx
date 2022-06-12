@@ -92,6 +92,7 @@ in
     python39Packages.pygments
     (agda.withPackages (ps: with ps; [ standard-library ]))
     inotify-tools
+    toilet
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
