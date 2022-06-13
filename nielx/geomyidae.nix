@@ -18,10 +18,15 @@ in
       type = types.str;
       default = "localhost";
     };
+
+    allowExternal = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ 70 ];
+    networking.firewall.allowedTCPPorts = if cfg.allowExternal then [ 70 ] else [ ];
 
     nielx.services.geomyidae = {
       command = "${pkgs.geomyidae}/bin/geomyidae -d -e -b ${cfg.baseDir} -h ${cfg.hostname} -u ${config.nielx.user} -g users";

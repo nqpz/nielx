@@ -133,7 +133,10 @@ background white
       ];
     };
 
-    geomyidae.enable = true;
+    geomyidae = {
+      enable = true;
+      allowExternal = false;
+    };
   };
 
   # This value determines the NixOS release with which your system is to be
