@@ -52,7 +52,7 @@ ${pkgs.niv}/bin/niv update
 
 nixpkgs=$(echo '"${"$" + "{(import ./nix/sources.nix).nixpkgs}"}"' | nix repl 2>/dev/null | tr -d '"')
 
-sudo nixos-rebuild switch -I nixpkgs=$nixpkgs -I nixos=$nixpkgs -I nixos-config=/etc/nixos/configuration.nix
+echo sudo nixos-rebuild switch -I nixpkgs=$nixpkgs -I nixos=$nixpkgs -I nixos-config=/etc/nixos/configuration.nix
 '')
   ];
 }
