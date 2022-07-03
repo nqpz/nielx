@@ -23,7 +23,18 @@ in
     timeout = 0;
   };
 
-  networking.networkmanager.enable = true;
+  networking = {
+    # https://uncensoreddns.org/
+    nameservers = [
+      "91.239.100.100"
+      "89.233.43.71"
+    ];
+
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
+  };
 
   console.useXkbConfig = true;
 
