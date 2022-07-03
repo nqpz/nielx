@@ -52,6 +52,8 @@ escape ^Ww
   };
 
   home-manager.users."${cfg.user}" = { pkgs, ... }: {
+    home.stateVersion = "18.09";
+
     programs.bash = {
       enable = true;
       historySize = 50000;
