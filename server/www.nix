@@ -10,6 +10,7 @@
       ./www/media.nix
       ./www/dikutal.nix
       ./www/burgerforslag.nix
+      ./www/hest.quest.nix
     ];
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
