@@ -14,7 +14,7 @@ in
       automatic = true;
       dates = "weekly";
     };
-    autoOptimiseStore = true;
+    settings.auto-optimise-store = true;
     extraOptions = "experimental-features = nix-command flakes";
   };
 
