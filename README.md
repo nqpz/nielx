@@ -32,5 +32,5 @@ general modules that can be applied to any configuration.
 Not very NixOS-related, but anyway:
 
   - [Emacs](laptop/emacs)
-  - [StumpWM](laptop/stumpwmrc)
+  - [StumpWM](laptop/stumpwmrc.cl)
   - [Modified Dvorak](laptop/xmodmap)
