@@ -20,6 +20,11 @@ in
     port = mkOption {
       type = types.int;
     };
+
+    https = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
 
   config = mkIf cfg.enable {
@@ -33,8 +38,8 @@ in
     };
 
     services.nginx.virtualHosts."${cfg.domain}" = {
-      forceSSL = true;
-      enableACME = true;
+      forceSSL = cfg.https;
+      enableACME = cfg.https;
       serverAliases = [ "www.${cfg.domain}" ];
       locations."/".proxyPass = "http://localhost:${builtins.toString cfg.port}";
     };
