@@ -25,14 +25,14 @@ in
 
   networking = {
     # https://uncensoreddns.org/
-    nameservers = [
-      "91.239.100.100"
-      "89.233.43.71"
-    ];
+    # nameservers = [
+    #   "91.239.100.100"
+    #   "89.233.43.71"
+    # ];
 
     networkmanager = {
       enable = true;
-      dns = "none";
+      # dns = "none";
     };
   };
 
