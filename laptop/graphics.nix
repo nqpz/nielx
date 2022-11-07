@@ -42,8 +42,6 @@ ${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
     };
 
     windowManager.stumpwm.enable = true;
-
-    useGlamor = true;
   };
 
   services.picom = {
