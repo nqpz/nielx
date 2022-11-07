@@ -24,7 +24,7 @@ in
     w3m
     usbutils
     terminator
-    # zathura
+    zathura
     evince
     rustup
     sox
