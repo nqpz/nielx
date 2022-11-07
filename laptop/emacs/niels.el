@@ -23,13 +23,13 @@
 (add-to-list 'load-path (concat user-emacs-directory "local-lisp/futhark-mode"))
 
 ;; Font
-(set-face-attribute 'default nil :family "Inconsolata")
+(set-face-attribute 'default nil :family "DejaVu Sans Mono")
 (require 'unicode-fonts)
 (unicode-fonts-setup)
 ;; Specify font for Unicode emojis.
 ;; (when (member "Symbola" (font-family-list))
 ;;   (set-fontset-font t 'unicode "Symbola" nil 'prepend))
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 110)
 
 ;; Define the necessary variables for certain things to work.
 (defvar niels-hostname)
