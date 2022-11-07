@@ -93,6 +93,7 @@ in
     (agda.withPackages (ps: with ps; [ standard-library ]))
     inotify-tools
     toilet
+    scummvm
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
