@@ -48,7 +48,6 @@ in
 
     services.gitea = {
       enable = true;
-      disableRegistration = true;
       appName = cfg.name;
       database = {
         type = "postgres";
@@ -57,10 +56,6 @@ in
       domain = "${cfg.domain}";
       rootUrl = "https://${cfg.domain}/";
       httpPort = cfg.port;
-      ssh = {
-        enable = true;
-        clonePort = cfg.sshPort;
-      };
       settings = let
         docutils = pkgs.python3.withPackages (ps: with ps; [ docutils pygments ]);
       in {
@@ -70,6 +65,7 @@ in
         };
         service = {
           REGISTER_EMAIL_CONFIRM = true;
+          DISABLE_REGISTRATION = true;
         };
         markdown = {
           ENABLE_HARD_LINE_BREAK_IN_COMMENTS = false;
@@ -82,6 +78,7 @@ in
         };
         server = {
           LANDING_PAGE = "explore";
+          SSH_PORT = cfg.sshPort;
         };
         repository = {
           DEFAULT_PRIVATE = "public";
