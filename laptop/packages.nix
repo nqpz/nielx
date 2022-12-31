@@ -64,7 +64,7 @@ in
     xsel
     xmacro
     ocaml
-    dune_2
+    dune_3
     ocamlPackages.findlib
     ocamlPackages.core
     ocamlPackages.async
