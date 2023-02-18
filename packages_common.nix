@@ -10,6 +10,7 @@ in
     sysstat
     rsync
     htop
+    btop
     iotop
     pciutils
     nload
