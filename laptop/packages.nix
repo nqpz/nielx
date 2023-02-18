@@ -94,6 +94,7 @@ in
     inotify-tools
     toilet
     scummvm
+    lmms
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
