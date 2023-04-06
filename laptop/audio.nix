@@ -22,7 +22,6 @@ in
 
   musnix = {
     enable = true;
-    kernel.optimize = true;
     soundcardPciId = "00:1f.3"; # lspci | grep -i audio
   };
 
