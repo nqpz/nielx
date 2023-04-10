@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    mailutils
+    # mailutils
     imagemagick
     stack
     ffmpeg-full
