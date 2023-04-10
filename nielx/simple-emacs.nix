@@ -46,7 +46,7 @@ in
             smex
             nix-mode
             magit
-            org
+            # org
             markdown-mode
             multiple-cursors
           ]);
