@@ -86,7 +86,6 @@ in
     qemu
     nixos-shell
     supercollider
-    wrap
     lua
     love_11
     python39Packages.pygments
