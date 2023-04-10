@@ -18,9 +18,11 @@ in
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
-      permitRootLogin = "no";
-      passwordAuthentication = false;
       ports = [ cfg.port ];
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+      };
     };
   };
 }
