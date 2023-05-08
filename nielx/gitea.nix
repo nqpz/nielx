@@ -53,9 +53,6 @@ in
         type = "postgres";
         passwordFile = "/etc/gitea.local/dbpassword";
       };
-      domain = "${cfg.domain}";
-      rootUrl = "https://${cfg.domain}/";
-      httpPort = cfg.port;
       settings = let
         docutils = pkgs.python3.withPackages (ps: with ps; [ docutils pygments ]);
       in {
@@ -77,6 +74,9 @@ in
           IS_INPUT_FILE = false;
         };
         server = {
+          ROOT_URL = "https://${cfg.domain}/";
+          HTTP_PORT = cfg.port;
+          DOMAIN = "${cfg.domain}";
           LANDING_PAGE = "explore";
           SSH_PORT = cfg.sshPort;
         };
