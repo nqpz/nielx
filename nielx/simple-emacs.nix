@@ -22,6 +22,7 @@ in
       cat > $out/share/emacs/site-lisp/default.el <<EOF
       (require 'undo-tree)
       (global-undo-tree-mode)
+      (setq undo-tree-auto-save-history nil)
 
       (defun switch-to-other-buffer ()
         "Switch to the recently visited buffer in the current frame."
@@ -46,7 +47,7 @@ in
             smex
             nix-mode
             magit
-            # org
+            org
             markdown-mode
             multiple-cursors
           ]);
