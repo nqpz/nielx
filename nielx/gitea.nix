@@ -127,7 +127,7 @@ rm -f repositories/*/*/archives/targz/*.tar.gz repositories/*/*/archives/zip/*.z
 
 # Dump.
 cd dump
-GITEA_WORK_DIR=${stateDir} gitea dump > /dev/null
+GITEA_WORK_DIR=${stateDir} gitea dump --skip-lfs-data > /dev/null
 
 # Overwrite any earlier file since these dumps take up a bit of space.
 mv -f gitea-dump-*.zip gitea-dump.zip
