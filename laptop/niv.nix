@@ -29,5 +29,11 @@ in
     overlays = [ overlay_niv overlay_nur ];
   };
 
+  # Apparently this is being used by something that I use, but I'm not sure
+  # what.
+  nixpkgs.config.permittedInsecurePackages = [
+     "openssl-1.1.1u"
+   ];
+
   environment.systemPackages = [ pkgs.niv ];
 }

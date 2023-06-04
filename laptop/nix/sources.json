@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2d85d8781e4fa1e793c92763733b6b131e5aabbb",
-        "sha256": "0d30r26g1ps9527k0cva95cacr2hipqnqdqhrgk6pnxdly2915n0",
+        "rev": "65b4ce84312de2fec2e26315bad06278e3e4acd5",
+        "sha256": "1afjna77rqs7w1p888i38vvpp4vw4my1wg19q3fs7vhbh3c5w0wd",
         "type": "tarball",
-        "url": "https://github.com/nix-community/NUR/archive/2d85d8781e4fa1e793c92763733b6b131e5aabbb.tar.gz",
+        "url": "https://github.com/nix-community/NUR/archive/65b4ce84312de2fec2e26315bad06278e3e4acd5.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "home-manager": {
@@ -17,10 +17,10 @@
         "homepage": "https://nix-community.github.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "eec22729990ddf53d1e45e74624ddf667cdbe11b",
-        "sha256": "0vcx9dcp77i5c10b30xrs7mpw4p7mycdnbvh05y2x0fvpynmv5x8",
+        "rev": "607d8fad96436b134424b9935166a7cd0884003e",
+        "sha256": "0l85b6q7ff258lk3kx19flra8ajhf9mym81ijpknnz21yq979q7q",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/eec22729990ddf53d1e45e74624ddf667cdbe11b.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/607d8fad96436b134424b9935166a7cd0884003e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "musnix": {
@@ -41,10 +41,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "7225521219f64df00de86c3b946a26f608f3b4dc",
-        "sha256": "04w9c06f70n0k9c4xhma4nfrkxxg7d039xd3v9dak8xd7avjb7v0",
+        "rev": "0ebb80e003c26d5388a9b74645fbdcfca3bdd0ef",
+        "sha256": "0wpnk1n4vjyqwjjrm6dvkyh7xr7983rszfhfcg31v106qhfnh41c",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/7225521219f64df00de86c3b946a26f608f3b4dc.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/0ebb80e003c26d5388a9b74645fbdcfca3bdd0ef.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixos-hardware": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "81cd886719e10d4822b2a6caa96e95d56cc915ef",
-        "sha256": "0cgps61cliswbazpqbkznchv2384n2liddpl0s2zrgybx5sd5g0f",
+        "rev": "4cc688ee711159b9bcb5a367be44007934e1a49d",
+        "sha256": "0f6qivypvnsazlad6hi3s5df5ji4lhxzi91f6wl5nl7wfnnixp1n",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixos-hardware/archive/81cd886719e10d4822b2a6caa96e95d56cc915ef.tar.gz",
+        "url": "https://github.com/NixOS/nixos-hardware/archive/4cc688ee711159b9bcb5a367be44007934e1a49d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -65,10 +65,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "897876e4c484f1e8f92009fd11b7d988a121a4e7",
-        "sha256": "0i9j45jwmqhiv7v8i4dmigaras3iw4hmrds2vvd5x8riln3hyizn",
+        "rev": "dd4982554e18b936790da07c4ea2db7c7600f283",
+        "sha256": "1a78xbrvgbm02xjgnm7w1vpljjr55404jz3yf14rdq4ncwy4975f",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/897876e4c484f1e8f92009fd11b7d988a121a4e7.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/dd4982554e18b936790da07c4ea2db7c7600f283.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
