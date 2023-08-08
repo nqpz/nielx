@@ -88,7 +88,7 @@ in
     supercollider
     lua
     love_11
-    python39Packages.pygments
+    python3Packages.pygments
     (agda.withPackages (ps: with ps; [ standard-library ]))
     inotify-tools
     toilet
