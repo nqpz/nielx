@@ -5,6 +5,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
+    pmutils
     neomutt
     (utils.binWrapper "mutt" "${pkgs.neomutt}/bin/neomutt")
     offlineimap
@@ -98,7 +99,7 @@ in
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
 ${pkgs.stumpish}/bin/stumpish 'eval (stumpwm::save-es-called-win)' > /dev/null
-${pkgs.emacs}/bin/emacsclient "$@"
+${pkgs.emacs29}/bin/emacsclient "$@"
 '')
 
     (pkgs.writeScriptBin "battery" ''#!/bin/sh

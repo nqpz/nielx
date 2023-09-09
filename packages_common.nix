@@ -14,7 +14,7 @@ in
     iotop
     pciutils
     nload
-    emacs
+    emacs29
     ack
     man-pages
     stdmanpages
