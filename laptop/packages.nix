@@ -34,7 +34,7 @@ in
     valgrind
     nmap
     pandoc
-    youtube-dl
+    yt-dlp
     transmission-remote-gtk
     acpi
     iw
