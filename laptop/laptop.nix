@@ -94,7 +94,7 @@ window_type normal
 background white
 '';
 
-    home.file.".urlview".text = "COMMAND firefox u";
+    home.file.".urlscan".text = "COMMAND firefox u";
 
     programs.mpv = {
       enable = true;

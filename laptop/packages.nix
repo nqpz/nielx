@@ -9,7 +9,7 @@ in
     neomutt
     (utils.binWrapper "mutt" "${pkgs.neomutt}/bin/neomutt")
     offlineimap
-    urlview
+    urlscan
     stack
     cabal-install
     imagemagick
