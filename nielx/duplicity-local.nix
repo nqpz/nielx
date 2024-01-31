@@ -35,7 +35,7 @@ in
   config = let
     paths' = builtins.concatStringsSep "\n" cfg.paths;
     ignores' = builtins.concatStringsSep "\n" (map (ignore: "- ${ignore}") cfg.ignores);
-    globbingFileList = pkgs.writeText "globbingFileList" ("${paths'}\n${ignores'}\n- **\n");
+    globbingFileList = pkgs.writeText "globbingFileList" ("${ignores'}\n${paths'}\n- **\n");
     script = pkgs.writeScriptBin "backup" ''
 #!/bin/sh
 
