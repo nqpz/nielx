@@ -45,6 +45,7 @@ export PATH=${pkgs.lftp}/bin:$PATH
 
 ${pkgs.time}/bin/time -p \
      ${pkgs.duplicity}/bin/duplicity \
+     --full-if-older-than 3M \
      --include-filelist ${globbingFileList} \
      / ${cfg.destination}
 '';
