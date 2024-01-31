@@ -117,6 +117,17 @@ background white
     home.file.".config/terminator/config".source = ./terminator.cfg;
   };
 
+  programs.firejail = {
+    enable = true;
+    wrappedBinaries = {
+      steam = {
+        executable = "${pkgs.steam}/bin/steam";
+        profile = "${pkgs.firejail}/etc/firejail/steam.profile";
+      };
+      # todo: chrome etc.
+    };
+  };
+
   # Enable things through the nielx wrapper.  Sensitive information is kept
   # separate.
   nielx = {
