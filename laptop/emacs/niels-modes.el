@@ -31,9 +31,18 @@
 ;; StumpWM.
 (setq stumpwm-shell-program "/run/current-system/sw/bin/stumpish")
 
+(setq stumpwm-fix-magit-started nil)
+
+(add-hook 'magit-status-mode-hook (lambda () (setq stumpwm-fix-magit-started t)))
+
+(defun stumpwm-fix-maybe-return ()
+  (if stumpwm-fix-magit-started
+      (setq stumpwm-fix-magit-started nil)
+    (shell-command "stumpish 'eval (stumpwm::return-es-called-win stumpwm::*es-win*)' >/dev/null 2>/dev/null")))
+
 ;; When returning from emacsclient.
-(if window-system (add-hook 'server-done-hook (lambda () (shell-command
-    "stumpish 'eval (stumpwm::return-es-called-win stumpwm::*es-win*)' >/dev/null 2>/dev/null"))))
+(if window-system
+    (add-hook 'server-done-hook 'stumpwm-fix-maybe-return))
 
 (defun stumpwm-echo (message)
   "Echoes a string in StumpWM."
