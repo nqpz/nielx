@@ -41,7 +41,7 @@ direnv allow
 
   networking.hostName = cfg.hostname;
 
-  programs.screen.screenrc = ''
+  environment.etc."screenrc".text = ''
 startup_message off
 escape ^Ww
 '';
