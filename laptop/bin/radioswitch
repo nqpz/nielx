@@ -18,7 +18,7 @@ start_mpv() {
 
 mplay() {
     if [ "$1" = radioalfa ]; then
-        start_mpv http://89.249.7.68/alfa
+        start_mpv https://radioserver.dk/alfa
     elif [ "$1" = rivieraradio ]; then
         start_mpv http://rivieraradio.ice.infomaniak.ch/rivieraradio-high
     elif [ "$1" = discofetish ]; then
