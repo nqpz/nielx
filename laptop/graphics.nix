@@ -7,19 +7,20 @@ in
 {
   services.fractalart.enable = true;
 
+  # Touchpad
+  services.libinput.enable = true;
+  services.libinput.touchpad.tapping = false;
+
+  services.displayManager.defaultSession = "xfce+stumpwm";
+
   services.xserver = {
     enable = true;
 
-    layout = "dk";
-    xkbVariant = "dvorak";
-    xkbOptions = "ctrl:swapcaps";
-
-    # Touchpad
-    libinput.enable = true;
-    libinput.touchpad.tapping = false;
+    xkb.layout = "dk";
+    xkb.variant = "dvorak";
+    xkb.options = "ctrl:swapcaps";
 
     displayManager = {
-      defaultSession = "xfce+stumpwm";
       lightdm.enable = true;
       sessionCommands = ''
 ${pkgs.xorg.xhost}/bin/xhost +local:lxd
@@ -50,9 +51,9 @@ ${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
     backend = "glx";
   };
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  # };
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
