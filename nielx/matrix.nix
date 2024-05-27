@@ -25,24 +25,26 @@ in
   in mkIf cfg.enable {
     services.matrix-synapse = {
       enable = true;
-      server_name = "${cfg.mainDomain}";
-      database_type = "sqlite3";
-      account_threepid_delegates.email = identityServer;
-      listeners = [
-        {
-          port = cfg.internalPort;
-          bind_address = "::1";
-          type = "http";
-          tls = false;
-          x_forwarded = true;
-          resources = [
-            {
-              names = [ "client" "federation" ];
-              compress = false;
-            }
-          ];
-        }
-      ];
+      settings = {
+        server_name = "${cfg.mainDomain}";
+        database.name = "sqlite3";
+        listeners = [
+          {
+            port = cfg.internalPort;
+            bind_addresses = [ "::" "0.0.0.0" ];
+            type = "http";
+            tls = false;
+            x_forwarded = true;
+            resources = [
+              {
+                names = [ "client" "federation" ];
+                compress = false;
+              }
+            ];
+          }
+        ];
+      };
+      # account_threepid_delegates.email = identityServer;
     };
 
     services.nginx.enable = true;
