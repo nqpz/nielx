@@ -107,7 +107,9 @@ in
 
     services.postgresql = {
       enable = true;
-      package = pkgs.postgresql_15;
+      package = pkgs.postgresql_16;
+
+      ensureDatabases = [ config.services.gitea.user ];
 
       authentication = ''
       local gitea all ident map=gitea-users
