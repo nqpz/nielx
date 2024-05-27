@@ -27,6 +27,9 @@ in
   nixpkgs.pkgs = import sources.nixpkgs {
     config.allowUnfree = true;
     overlays = [ overlay_niv overlay_nur ];
+    nixpkgs.config.packageOverrides = pkgs: {
+      intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+    };
   };
 
   environment.systemPackages = [ pkgs.niv ];
