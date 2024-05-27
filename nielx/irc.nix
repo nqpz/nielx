@@ -80,15 +80,15 @@ in
     };
     users.groups.bitlbee = mkIf cfg.bitlbee.enable {};
 
-    nixpkgs.config.bitlbee.enableLibPurple = cfg.bitlbee.enable;
-    services.bitlbee = mkIf cfg.bitlbee.enable {
-      enable = true;
-      hostName = cfg.bitlbee.hostName;
-      portNumber = cfg.bitlbee.port;
-      authMode = "Registered";
-      libpurple_plugins = [
-        pkgs.purple-matrix
-      ];
-    };
+    # nixpkgs.config.bitlbee.enableLibPurple = cfg.bitlbee.enable;
+    # services.bitlbee = mkIf cfg.bitlbee.enable {
+    #   enable = true;
+    #   hostName = cfg.bitlbee.hostName;
+    #   portNumber = cfg.bitlbee.port;
+    #   authMode = "Registered";
+    #   libpurple_plugins = [
+    #     pkgs.purple-matrix
+    #   ];
+    # };
   };
 }
