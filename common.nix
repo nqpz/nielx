@@ -48,7 +48,6 @@ escape ^Ww
 
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "curses";
   };
 
   home-manager.users."${cfg.user}" = { pkgs, ... }: {
