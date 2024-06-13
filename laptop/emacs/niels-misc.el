@@ -174,4 +174,8 @@ the region to camelCase strings (not CamelCase strings)."
 
 (ad-activate 'compilation-start)
 
+(defun make ()
+  (interactive)
+  (shell-command "make"))
+
 (provide 'niels-misc)
