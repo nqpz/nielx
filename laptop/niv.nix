@@ -9,6 +9,9 @@ let
   overlay_nur = _: super: {
     nur = import sources.NUR { pkgs = super; };
   };
+  overlay_hybrid_codec = _: super: {
+    intel-vaapi-driver = super.intel-vaapi-driver.override { enableHybridCodec = true; };
+  };
 in
 {
   imports =
@@ -26,10 +29,7 @@ in
 
   nixpkgs.pkgs = import sources.nixpkgs {
     config.allowUnfree = true;
-    overlays = [ overlay_niv overlay_nur ];
-    nixpkgs.config.packageOverrides = pkgs: {
-      intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-    };
+    overlays = [ overlay_niv overlay_nur overlay_hybrid_codec ];
   };
 
   environment.systemPackages = [ pkgs.niv ];

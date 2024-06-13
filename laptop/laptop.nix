@@ -102,7 +102,6 @@ background white
         fullscreen = "yes";
         hwdec = "auto-safe";
         vo = "gpu";
-        profile = "gpu-hq";
         ytdl-format = "bestvideo+bestaudio";
       };
     };
