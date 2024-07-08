@@ -8,7 +8,6 @@
     enableGhostscriptFonts = true;
     packages = with pkgs; [
       inconsolata
-      symbola
       emojione
       noto-fonts
       noto-fonts-cjk
@@ -33,6 +32,7 @@
       corefonts
       vistafonts
       google-fonts
+      symbola
     ];
   };
 }
