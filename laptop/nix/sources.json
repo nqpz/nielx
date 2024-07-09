@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2ab5d6e60494e8c37b78b71f0b234c0659260eeb",
-        "sha256": "1jz5zp1d152g3qln5akldvw5hbjn3sfijjdprj5lv9whlyay0caf",
+        "rev": "c7cc8060b718840cc8ca3d1d60dcb077c70f34eb",
+        "sha256": "079x98ny18gw45b82nkq2ly4k54k3bannqzzp4cnw3j29059vcpj",
         "type": "tarball",
-        "url": "https://github.com/nix-community/NUR/archive/2ab5d6e60494e8c37b78b71f0b234c0659260eeb.tar.gz",
+        "url": "https://github.com/nix-community/NUR/archive/c7cc8060b718840cc8ca3d1d60dcb077c70f34eb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "home-manager": {
@@ -17,10 +17,10 @@
         "homepage": "https://nix-community.github.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "5d151429e1e79107acf6d06dcc5ace4e642ec239",
-        "sha256": "1imp3945nfw0y53avnn2k1yk0079v8m52bz10daqna97v6f6cx47",
+        "rev": "2fb5c1e0a17bc6059fa09dc411a43d75f35bb192",
+        "sha256": "0vxzl3anrvvyyq8b5yx869hzcz7wpjkwdlfl87wg2agr3gh41yzd",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/5d151429e1e79107acf6d06dcc5ace4e642ec239.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/2fb5c1e0a17bc6059fa09dc411a43d75f35bb192.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "musnix": {
@@ -29,10 +29,10 @@
         "homepage": "",
         "owner": "musnix",
         "repo": "musnix",
-        "rev": "65f1b5863ff6157d4870ed177e8ccd82e21127ad",
-        "sha256": "0dr5f48q63cdcrx61z01iq7plq5kh472p3w1h0fwk72jm388dfbv",
+        "rev": "f376a8f0b180d203b3598079f64445b809d7cd18",
+        "sha256": "0c6rp2l9z806xg1nw80a4v3g1zaa005mmxly0x3m41vzjb7xdly0",
         "type": "tarball",
-        "url": "https://github.com/musnix/musnix/archive/65f1b5863ff6157d4870ed177e8ccd82e21127ad.tar.gz",
+        "url": "https://github.com/musnix/musnix/archive/f376a8f0b180d203b3598079f64445b809d7cd18.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
