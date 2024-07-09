@@ -8,7 +8,7 @@
     enableGhostscriptFonts = true;
     packages = with pkgs; [
       inconsolata
-      emojione
+      # emojione
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji

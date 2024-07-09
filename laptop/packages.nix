@@ -50,10 +50,10 @@ in
     (utils.binWrapper "pl" "${pkgs.swiProlog}/bin/swipl")
     aegisub
     gparted
-    gnome3.nautilus
+    nautilus
     audacity
     mediainfo
-    gnome3.cheese
+    cheese
     xawtv
     xorg.xmodmap
     xorg.setxkbmap

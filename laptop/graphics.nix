@@ -54,7 +54,7 @@ ${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
   # nixpkgs.config.packageOverrides = pkgs: {
   #   intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   # };
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
@@ -65,7 +65,7 @@ ${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
       ocl-icd
     ];
 
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages32 = with pkgs.pkgsi686Linux; [ intel-vaapi-driver ];
   };
 }
