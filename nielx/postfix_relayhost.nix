@@ -54,6 +54,6 @@ in
       text = "${cfg.relayHost} ${cfg.emailUser}:${cfg.emailPassword}";
       mode = "600";
     };
-    systemd.services.postfix.preStart = "${pkgs.postfix}/sbin/postmap /etc/${passwd_file}";
+    # systemd.services.postfix.preStart = "${pkgs.postfix}/sbin/postmap /etc/${passwd_file}";
   };
 }
