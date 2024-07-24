@@ -87,8 +87,8 @@ in
     qemu
     nixos-shell
     supercollider
-    lua
-    love_11
+    dotnet-sdk_6
+    nodejs_latest
     python3Packages.pygments
     (agda.withPackages (ps: with ps; [ standard-library ]))
     inotify-tools
