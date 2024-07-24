@@ -41,6 +41,7 @@ in
     jq
     bind
     lm_sensors
+    sloc
 
     (pkgs.writeScriptBin "upgrade-nixos" ''#!/bin/sh
 set -e # Exit on first error.
