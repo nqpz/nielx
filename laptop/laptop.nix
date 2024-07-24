@@ -40,6 +40,17 @@ in
 
   services.redshift.enable = true;
 
+  # Enable TLP for battery life.
+  services.tlp = {
+    enable = true;
+    settings = {
+      START_CHARGE_THRESH_BAT1=80;
+      STOP_CHARGE_THRESH_BAT1=95;
+
+      TPACPI_ENABLE=1;
+      TPSMAPI_ENABLE=1;
+    };
+  };
 
   # I copied the below code from somewhere, but now it's made my NNS resolving super slow.
 
