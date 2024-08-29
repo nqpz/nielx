@@ -95,6 +95,7 @@ in
     toilet
     scummvm
     lmms
+    racket
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
