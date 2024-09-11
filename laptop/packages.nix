@@ -96,6 +96,7 @@ in
     scummvm
     lmms
     racket
+    exiftool
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
