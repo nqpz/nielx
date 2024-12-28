@@ -54,18 +54,24 @@ ${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
   # nixpkgs.config.packageOverrides = pkgs: {
   #   intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   # };
+  hardware.intel-gpu-tools.enable = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
       intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      vaapiVdpau
+      vaapi-intel-hybrid
       libvdpau-va-gl
       intel-compute-runtime
+      intel-media-sdk
       ocl-icd
+      intel-ocl
     ];
 
+
     enable32Bit = true;
-    extraPackages32 = with pkgs.pkgsi686Linux; [ intel-vaapi-driver ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      intel-vaapi-driver
+    ];
   };
 }

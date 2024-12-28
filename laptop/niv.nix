@@ -9,9 +9,6 @@ let
   overlay_nur = _: super: {
     nur = import sources.NUR { pkgs = super; };
   };
-  overlay_hybrid_codec = _: super: {
-    intel-vaapi-driver = super.intel-vaapi-driver.override { enableHybridCodec = true; };
-  };
 in
 {
   imports =
@@ -23,13 +20,16 @@ in
 
   nix.nixPath = [
     "nixpkgs=${sources.nixpkgs}"
-    "nixos=${sources.nixpkgs}"
+    "nixos=${sources.nixpkgs}/nixos"
     "nixos-config=/etc/nixos/configuration.nix"
   ];
 
   nixpkgs.pkgs = import sources.nixpkgs {
     config.allowUnfree = true;
-    overlays = [ overlay_niv overlay_nur overlay_hybrid_codec ];
+    overlays = [
+      overlay_niv
+      overlay_nur
+    ];
   };
 
   environment.systemPackages = [ pkgs.niv ];

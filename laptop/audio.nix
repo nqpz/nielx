@@ -6,17 +6,10 @@ in
 {
   users.users."${cfg.user}".extraGroups = [ "audio" ];
 
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudio.override { jackaudioSupport = true; };
-    support32Bit = true;
-  };
-
   environment.systemPackages = with pkgs; [
     pavucontrol
     # Test JACK with jack_simple_client.
-    libjack2 jack2 qjackctl libjack2 jack2 qjackctl jack2Full jack_capture
+    libjack2 jack2 qjackctl libjack2 jack2 qjackctl jack_capture
     timidity vkeybd
   ];
 

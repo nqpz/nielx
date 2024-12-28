@@ -44,10 +44,11 @@ in
     ghostscript
     aalib
     libreoffice
-    gpicview
+    loupe
+    optipng
     ascii
-    swiProlog
-    (utils.binWrapper "pl" "${pkgs.swiProlog}/bin/swipl")
+    swi-prolog
+    (utils.binWrapper "pl" "${pkgs.swi-prolog}/bin/swipl")
     aegisub
     gparted
     nautilus
@@ -87,7 +88,7 @@ in
     qemu
     nixos-shell
     supercollider
-    dotnet-sdk_6
+    dotnet-sdk
     nodejs_latest
     python3Packages.pygments
     (agda.withPackages (ps: with ps; [ standard-library ]))
@@ -97,6 +98,8 @@ in
     lmms
     racket
     exiftool
+    clinfo
+    obsidian
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
