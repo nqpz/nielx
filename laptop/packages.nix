@@ -18,7 +18,7 @@ in
     ffmpeg-full
     x264
     bento4
-    kdenlive
+    kdePackages.kdenlive
     firefox
     chromium
     surf
@@ -70,7 +70,7 @@ in
     ocamlPackages.findlib
     ocamlPackages.core
     ocamlPackages.async
-    ocamlPackages.async_ssl
+    #ocamlPackages.async_ssl
     intel-compute-runtime
     ntfs3g
     exfat
@@ -83,7 +83,8 @@ in
     jitsi-meet-electron
     xmoto
     cfdg
-    winePackages.full
+    wineWowPackages.stable
+    winetricks
     dosbox
     qemu
     nixos-shell
@@ -104,7 +105,12 @@ in
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
 ${pkgs.stumpish}/bin/stumpish 'eval (stumpwm::save-es-called-win)' > /dev/null
-${pkgs.emacs29}/bin/emacsclient "$@"
+${pkgs.emacs30}/bin/emacsclient "$@"
+'')
+    (pkgs.writeScriptBin "stumpemacsclientn" ''#!/bin/sh
+set -e # Exit on first error.
+${pkgs.stumpish}/bin/stumpish 'eval (stumpwm::save-es-called-win)' > /dev/null
+${pkgs.emacs30}/bin/emacsclient -n "$@"
 '')
 
     (pkgs.writeScriptBin "battery" ''#!/bin/sh
@@ -141,6 +147,5 @@ ${pkgs.ghostscript}/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTI
     (utils.binWrapper "chrome" "${pkgs.google-chrome}/bin/google-chrome-stable")
     discord
     (utils.binWrapper "discord" "${pkgs.discord}/bin/Discord")
-    zoom-us
   ];
 }
