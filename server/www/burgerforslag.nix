@@ -4,7 +4,7 @@
   services.nginx.virtualHosts."burgerforslag.dk" = {
     addSSL = config.nielx.www.acmeSSL;
     enableACME = config.nielx.www.acmeSSL;
-    serverAliases = [ "www.burgerforslag.dk" "burgerforslag.metanohi.name" "www.burgerforslag.metanohi.name" ];
+    serverAliases = [ "www.burgerforslag.dk" ];
     extraConfig = "include /var/www/burgerforslag/burgerforslag.nginx.conf;";
   };
 
