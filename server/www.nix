@@ -11,6 +11,7 @@
       ./www/dikutal.nix
       ./www/burgerforslag.nix
       ./www/hest.quest.nix
+      ./www/mad.nix
     ];
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
@@ -102,6 +103,8 @@
           default = /var/www/burgerforslag/default.nix; command = "./update"; }
         { route = "/metanohi-gopher"; dir = "/var/gopher";
           default = /var/gopher/shell.nix; command = "make"; }
+        { route = "/mad"; dir = "/var/www/mad";
+          default = /var/www/media/default.nix; command = "./byg/result/bin/byg"; }
       ];
     };
   };
