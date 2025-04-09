@@ -15,8 +15,8 @@
 (add-to-list 'auto-mode-alist '("\\.media\\'" . yaml-mode))
 
 ;; Haskell.
-(setq haskell-process-type 'stack-ghci)
-(setq haskell-process-path-ghci "stack exec ghci")
+(setq haskell-process-type 'ghci)
+(setq haskell-process-path-ghci "nix-cabal-ghci")
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
 ;; OCaml.
