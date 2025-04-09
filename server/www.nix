@@ -10,7 +10,6 @@
       ./www/media.nix
       ./www/dikutal.nix
       ./www/burgerforslag.nix
-      ./www/hest.quest.nix
       ./www/mad.nix
     ];
 
