@@ -28,6 +28,10 @@ in
     EDITOR = "emacs";
   };
 
+  programs.firejail = {
+    enable = true;
+  };
+
   users.users."${cfg.user}" = {
     isNormalUser = true;
     home = "${cfg.home}";
