@@ -71,10 +71,10 @@ in
 
   virtualisation.docker.enable = true;
 
-  virtualisation.lxc.enable = true;
-  virtualisation.lxc.lxcfs.enable = true;
-  virtualisation.lxd.enable = true;
-  virtualisation.lxd.recommendedSysctlSettings = true;
+  # virtualisation.lxc.enable = true;
+  # virtualisation.lxc.lxcfs.enable = true;
+  # virtualisation.lxd.enable = true;
+  # virtualisation.lxd.recommendedSysctlSettings = true;
 
   # For X11 and pulseaudio to work with LXD.
   users.users.root.subUidRanges = [{ startUid = 1000; count = 1; }];
