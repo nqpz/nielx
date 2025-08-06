@@ -20,7 +20,7 @@ in
     bento4
     kdePackages.kdenlive
     firefox
-    chromium
+    (utils.binWrapper "chromium" "${pkgs.chromium}/bin/chromium --profile-directory=Default")
     surf
     w3m
     usbutils
