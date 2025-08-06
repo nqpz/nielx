@@ -71,7 +71,6 @@ in
     ocamlPackages.core
     ocamlPackages.async
     #ocamlPackages.async_ssl
-    intel-compute-runtime
     ntfs3g
     exfat
     baobab
