@@ -82,7 +82,7 @@
 (defcommand zathura () ()
   (run-or-raise "zathura" '(:class "Zathura")))
 (defcommand chromium () ()
-  (run-or-raise "chromium-browser" '(:title "Chromium")))
+  (run-or-raise "chromium" '(:title "Chromium")))
 (defcommand surf () ()
   (run-or-raise "surf" '(:class "Surf")))
 (defcommand emacs () ()
