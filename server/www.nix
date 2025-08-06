@@ -11,6 +11,7 @@
       ./www/dikutal.nix
       ./www/burgerforslag.nix
       ./www/mad.nix
+      ./www/adventure.funhack.dk.nix
     ];
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
