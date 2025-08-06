@@ -101,6 +101,7 @@ in
     exiftool
     clinfo
     obsidian
+    scc
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
