@@ -21,7 +21,7 @@ in
     kdePackages.kdenlive
     firefox
     (utils.binWrapper "chromium" "${pkgs.chromium}/bin/chromium --profile-directory=Default")
-    surf
+    # surf # apparently depends on an unsecure package
     w3m
     usbutils
     terminator

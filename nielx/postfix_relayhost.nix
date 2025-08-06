@@ -32,10 +32,9 @@ in
     services.postfix = {
       enable = true;
 
-      origin = cfg.defaultOriginDomain; # Default
-
-      config = {
-        relayhost = "${cfg.relayHost}";
+      settings.main = {
+        myorigin = cfg.defaultOriginDomain; # Default
+        relayhost = [ "${cfg.relayHost}" ];
         smtp_sasl_password_maps = "hash:/etc/${passwd_file}";
         smtp_tls_wrappermode = "yes";
         smtp_tls_security_level = lib.mkForce "verify";

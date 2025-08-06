@@ -63,7 +63,6 @@ ${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
       vaapi-intel-hybrid
       libvdpau-va-gl
       intel-compute-runtime
-      intel-media-sdk
       ocl-icd
       intel-ocl
     ];
