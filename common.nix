@@ -69,14 +69,16 @@ default-cache-ttl 86400
 '';
     in {
       enable = true;
-      userName = cfg.fullName;
-      userEmail = cfg.email;
       iniContent.pull.ff = "only";
       signing = {
         signByDefault = true;
         key = cfg.gpgKey;
       };
-      extraConfig = {
+      settings = {
+        user = {
+	  name = cfg.fullName;
+	  email = cfg.email;
+        };
         core = {
           excludesfile = "${excludesFile}";
         };
