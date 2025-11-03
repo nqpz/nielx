@@ -12,6 +12,7 @@
       ./www/burgerforslag.nix
       ./www/mad.nix
       ./www/adventure.funhack.dk.nix
+      ./www/hestehavegaard.dk.nix
     ];
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
