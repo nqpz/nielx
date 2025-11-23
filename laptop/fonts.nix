@@ -11,8 +11,7 @@
       # emojione
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
-      noto-fonts-extra
+      noto-fonts-color-emoji
       fira
       fira-code
       fira-mono
@@ -23,14 +22,14 @@
       anonymousPro
       freefont_ttf
       dejavu_fonts
-      ubuntu_font_family
+      ubuntu-classic
       ttf_bitstream_vera
       gentium
       lmodern
 
       # unfree
       corefonts
-      vistafonts
+      vista-fonts
       google-fonts
       symbola
     ];

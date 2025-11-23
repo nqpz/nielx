@@ -76,7 +76,7 @@ in
     baobab
     signal-desktop
     (utils.binWrapper "signal" "${pkgs.signal-desktop}/bin/signal-desktop")
-    glxinfo
+    mesa-demos
     element-desktop
     (utils.binWrapper "element" "${pkgs.element-desktop}/bin/element-desktop")
     jitsi-meet-electron
