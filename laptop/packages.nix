@@ -101,6 +101,7 @@ in
     clinfo
     obsidian
     scc
+    godot
 
     (pkgs.writeScriptBin "stumpemacsclient" ''#!/bin/sh
 set -e # Exit on first error.
