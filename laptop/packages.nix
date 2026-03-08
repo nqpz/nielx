@@ -56,10 +56,10 @@ in
     mediainfo
     cheese
     xawtv
-    xorg.xmodmap
-    xorg.setxkbmap
-    xorg.xrandr
-    xorg.xeyes
+    xmodmap
+    setxkbmap
+    xrandr
+    xeyes
     stumpish
     rlwrap
     stalonetray
@@ -82,7 +82,7 @@ in
     jitsi-meet-electron
     xmoto
     cfdg
-    wineWowPackages.stable
+    wineWow64Packages.stable
     winetricks
     dosbox
     qemu

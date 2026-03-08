@@ -23,11 +23,11 @@ in
     displayManager = {
       lightdm.enable = true;
       sessionCommands = ''
-${pkgs.xorg.xhost}/bin/xhost +local:lxd
-${pkgs.xorg.setxkbmap}/bin/setxkbmap dk dvorak
-${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:swapcaps
-${pkgs.xorg.xmodmap}/bin/xmodmap ${xmodmapFile}
-${pkgs.xorg.xsetroot}/bin/xsetroot -cursor_name left_ptr
+${pkgs.xhost}/bin/xhost +local:lxd
+${pkgs.setxkbmap}/bin/setxkbmap dk dvorak
+${pkgs.setxkbmap}/bin/setxkbmap -option ctrl:swapcaps
+${pkgs.xmodmap}/bin/xmodmap ${xmodmapFile}
+${pkgs.xsetroot}/bin/xsetroot -cursor_name left_ptr
 ${pkgs.feh}/bin/feh --bg-fill ${cfg.home}/.background-image
 . ${import ./exports.nix cfg pkgs}
 '';
