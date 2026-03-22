@@ -19,10 +19,12 @@ in
   };
 
   programs.ssh = {
+    startAgent = true;
     extraConfig = "AddKeysToAgent yes"; # add keys on first ssh
     agentTimeout = "24h";
     askPassword = "${pkgs.ssh-askpass-fullscreen}/bin/ssh-askpass-fullscreen";
   };
+  services.gnome.gcr-ssh-agent.enable = false;
 
   services.lorri.enable = true;
   environment.systemPackages = [
