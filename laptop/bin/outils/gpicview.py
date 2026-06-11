@@ -1,6 +1,6 @@
 from outils import *
 
-_media_endings = ['jpg', 'jpeg', 'png', 'bmp', 'webp', 'avif']
+_media_endings = ['jpg', 'jpeg', 'png', 'bmp', 'webp', 'avif', 'heic']
 
 def open(filenames):
     first = filenames[0]
