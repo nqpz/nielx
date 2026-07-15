@@ -180,4 +180,8 @@ background white
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "19.03"; # Did you read the comment?
+  # Silence warnings related to old state version
+  # programs.beets.enable = config.programs.beets.settings != { };
+  # xdg.userDirs.setSessionVariables = true;
+  # programs.git.signing.format = "openpgp";
 }
