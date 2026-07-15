@@ -26,6 +26,7 @@
       ttf_bitstream_vera
       gentium
       lmodern
+      cm_unicode
 
       # unfree
       corefonts
